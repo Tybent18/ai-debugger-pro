@@ -1,0 +1,10 @@
+import difflib
+
+
+def show_diff(old_code, new_code):
+    diff = difflib.unified_diff(
+        old_code.splitlines(),
+        new_code.splitlines(),
+        lineterm=""
+    )
+    return "\n".join(diff)

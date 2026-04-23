@@ -1,0 +1,14 @@
+class ExecutionHistory:
+    def __init__(self):
+        self.entries = []
+
+    def add(self, lang, code, output, success):
+        self.entries.append({
+            "lang": lang,
+            "code": code,
+            "output": output,
+            "success": success
+        })
+
+    def last(self):
+        return self.entries[-1] if self.entries else None

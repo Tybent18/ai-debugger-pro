@@ -1,0 +1,32 @@
+import tkinter as tk
+import threading
+import time
+
+
+class RealtimeChecker:
+    def __init__(self, editor_widget, callback, delay=0.6):
+        self.editor = editor_widget
+        self.callback = callback
+        self.delay = delay
+        self._last_change = time.time()
+        self._running = True
+
+        self.editor.bind("<KeyRelease>", self._on_change)
+        self._start_loop()
+
+    def _on_change(self, event=None):
+        self._last_change = time.time()
+
+    def _start_loop(self):
+        def loop():
+            while self._running:
+                time.sleep(0.2)
+
+                if time.time() - self._last_change > self.delay:
+                    code = self.editor.get("1.0", tk.END)
+                    self.callback(code)
+
+        threading.Thread(target=loop, daemon=True).start()
+
+    def stop(self):
+        self._running = False
