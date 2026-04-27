@@ -6,6 +6,11 @@ AI Debugger Pro allows you to write, run, and debug code across multiple languag
 
 ---
 
+## 📄 Research Paper
+
+- [Read on GitHub](docs/paper.md)
+- [Download PDF](docs/ai-debugger-pro-paper.pdf)
+
 ## 🎥 Demo
 
 ![Demo](assets/demo.gif)
