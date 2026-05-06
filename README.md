@@ -1,5 +1,7 @@
     # 🚀 AI Debugger Pro
 
+Designed as a runtime-aware debugging system, not just a static code analyzer.
+
 AI Debugger Pro fixes runtime errors using execution-aware AI.
 
 Example:
@@ -24,16 +26,26 @@ reducing time to identify and fix runtime issues.
 - [Read on GitHub](docs/paper.md)
 - [Download PDF](docs/ai-debugger-pro-paper.pdf)
 
+---
+
+Watch how a runtime error is detected, analyzed, and fixed in real time:
+
 ## 🎥 Demo
 
 ![Demo](assets/demo.gif)
 
-### What the demo shows:
-- Writing buggy code
-- Real-time syntax detection
-- Running code across languages
-- AI-generated fix suggestions
-- Side-by-side diff comparison
+## ⚡ Example
+
+Input:
+def divide(a, b):
+    return a / b
+
+print(divide(10, 0))
+
+Output:
+- Detects ZeroDivisionError
+- Shows variable state at failure (b = 0)
+- Suggests fix: add conditional check for zero
 
 ---
 
@@ -69,17 +81,16 @@ reducing time to identify and fix runtime issues.
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ Architecture (High-Level)
 
-Core system is divided into independent modules:
+Execution → Analysis → AI Reasoning → Feedback → History
 
-- `executor.py` → Secure code execution engine
-- `analyzer.py` → Python AST-based syntax validation
-- `ai_suggester.py` → AI debugging + fix generation
-- `languages.py` → Language registry (plugin-style design)
-- `history.py` → Execution history tracking system
-- `realtime.py` → Live syntax checking engine
-- `gui.py` → Tkinter-based interface layer
+Modules:
+- executor.py → runs code securely
+- analyzer.py → validates syntax
+- ai_suggester.py → generates fixes
+- history.py → tracks iterations
+- gui.py → interactive interface
 
 ---
 
@@ -90,3 +101,9 @@ git clone https://github.com/Tybent18/ai-debugger-pro
 cd ai-debugger-pro
 
 pip install -r requirements.txt
+
+---
+
+## ▶️ Run
+
+python gui.py
