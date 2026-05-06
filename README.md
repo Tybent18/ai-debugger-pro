@@ -1,8 +1,8 @@
     # 🚀 AI Debugger Pro
 
-Designed as a runtime-aware debugging system, not just a static code analyzer.
+AI Debugger Pro automatically detects, analyzes, and fixes runtime errors using execution-aware AI.
 
-AI Debugger Pro fixes runtime errors using execution-aware AI.
+Designed as a runtime-aware debugging system—not just a static code analyzer.
 
 Example:
 Input: Broken Python function
@@ -36,16 +36,12 @@ Watch how a runtime error is detected, analyzed, and fixed in real time:
 
 ## ⚡ Example
 
-Input:
+**Input**
+```python
 def divide(a, b):
     return a / b
 
 print(divide(10, 0))
-
-Output:
-- Detects ZeroDivisionError
-- Shows variable state at failure (b = 0)
-- Suggests fix: add conditional check for zero
 
 ---
 
