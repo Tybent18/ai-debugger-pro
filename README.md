@@ -1,6 +1,5 @@
     # 🚀 AI Debugger Pro
 
-```markdown
 Run code → detect failure → trace execution → get fix suggestions
 
 AI Debugger Pro automatically detects, analyzes, and fixes runtime errors using execution-aware AI.
@@ -43,6 +42,7 @@ def divide(a, b):
     return a / b
 
 print(divide(10, 0))
+```
 
 Output
 
@@ -85,7 +85,7 @@ Suggests fix: add conditional check for zero
 
 ## 🏗️ Architecture (High-Level)
 
-Execution → Analysis → AI Reasoning → Feedback → History
+Execution → Analysis → AI Reasoning → Feedback → History (temporal memory)
 
 Modules:
 - executor.py → runs code securely
@@ -93,8 +93,6 @@ Modules:
 - ai_suggester.py → generates fixes
 - history.py → tracks iterations
 - gui.py → interactive interface
-
-Execution → Analysis → AI Reasoning → Feedback → History (temporal memory)
 
 ---
 
