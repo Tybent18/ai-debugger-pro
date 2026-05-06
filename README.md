@@ -105,7 +105,6 @@ git clone https://github.com/Tybent18/ai-debugger-pro
 cd ai-debugger-pro
 pip install -r requirements.txt
 ```
----
 
 ## ▶️ Run
 
