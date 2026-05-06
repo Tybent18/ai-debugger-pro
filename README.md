@@ -46,9 +46,9 @@ print(divide(10, 0))
 
 Output
 
-*Detects ZeroDivisionError
-*Shows variable state at failure (b = 0)
-*Suggests fix: add conditional check for zero
+Detects ZeroDivisionError
+Shows variable state at failure (b = 0)
+Suggests fix: add conditional check for zero
 ---
 
 ## 🖥️ Interface Preview
