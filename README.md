@@ -12,12 +12,10 @@ AI Debugger Pro allows you to write, run, and debug code across multiple languag
 
 Why this matters:
 
-Debugging is slow and manual.
+Debugging is slow, manual, and context-heavy.
 
 AI Debugger Pro introduces execution-aware debugging,
-reducing time to identify and fix runtime issues.
-
-Built for developers who want faster debugging cycles with real-time feedback and AI-assisted fixes.
+reducing time spent identifying and fixing runtime issues.
 
 ---
 
@@ -46,9 +44,9 @@ print(divide(10, 0))
 
 Output
 
-Detects ZeroDivisionError
-Shows variable state at failure (b = 0)
-Suggests fix: add conditional check for zero
+- Detects ZeroDivisionError
+- Shows variable state at failure (b = 0)
+- Suggests fix: add conditional check for zero
 ---
 
 ## 🖥️ Interface Preview
@@ -70,7 +68,7 @@ Suggests fix: add conditional check for zero
 ## ✨ Features
 
 - ⚡ Real-time syntax checking (debounced, non-blocking UI)
-- 🧠 AI-powered debugging suggestions
+- 🧠 AI-powered debugging suggestions with contextual execution awareness
 - 🖥️ Multi-language execution:
   - Python
   - C
@@ -85,7 +83,7 @@ Suggests fix: add conditional check for zero
 
 ## 🏗️ Architecture (High-Level)
 
-Execution → Analysis → AI Reasoning → Feedback → History (temporal memory)
+Execution → Static Analysis → AI Reasoning → Feedback Loop → Temporal History
 
 Modules:
 - executor.py → runs code securely
