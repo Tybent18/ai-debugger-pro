@@ -1,12 +1,25 @@
     # 🚀 AI Debugger Pro
 
-A multi-language debugging tool with real-time analysis and AI-assisted code fixes.
+AI Debugger Pro fixes runtime errors using execution-aware AI.
+
+Example:
+Input: Broken Python function
+Output: Identifies bug, traces execution, suggests fix in seconds
+
+This is a multi-language debugging tool with real-time analysis and AI-assisted code fixes.
 
 AI Debugger Pro allows you to write, run, and debug code across multiple languages while receiving intelligent suggestions in a lightweight desktop interface.
 
+Why this matters:
+
+Debugging is slow and manual.
+
+AI Debugger Pro introduces execution-aware debugging,
+reducing time to identify and fix runtime issues.
+
 ---
 
-## 📄 Research Paper
+## 📄 Research Paper (optional)
 
 - [Read on GitHub](docs/paper.md)
 - [Download PDF](docs/ai-debugger-pro-paper.pdf)
