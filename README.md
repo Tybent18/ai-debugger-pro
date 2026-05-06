@@ -3,7 +3,6 @@
 ```markdown
 Run code → detect failure → trace execution → get fix suggestions
 
-```markdown
 AI Debugger Pro automatically detects, analyzes, and fixes runtime errors using execution-aware AI.
 
 Supports Python, C, C++, and Java with isolated execution pipelines.
@@ -105,7 +104,7 @@ Execution → Analysis → AI Reasoning → Feedback → History (temporal memor
 git clone https://github.com/Tybent18/ai-debugger-pro
 cd ai-debugger-pro
 pip install -r requirements.txt
-closing ```
+```
 ---
 
 ## ▶️ Run
