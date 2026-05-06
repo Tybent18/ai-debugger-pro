@@ -1,12 +1,11 @@
     # 🚀 AI Debugger Pro
 
+```markdown
 AI Debugger Pro automatically detects, analyzes, and fixes runtime errors using execution-aware AI.
 
-Designed as a runtime-aware debugging system—not just a static code analyzer.
+Supports Python, C, C++, and Java with isolated execution pipelines.
 
-Example:
-Input: Broken Python function
-Output: Identifies bug, traces execution, suggests fix in seconds
+Designed as a runtime-aware debugging system—not just a static code analyzer.
 
 This is a multi-language debugging tool with real-time analysis and AI-assisted code fixes.
 
@@ -18,6 +17,8 @@ Debugging is slow and manual.
 
 AI Debugger Pro introduces execution-aware debugging,
 reducing time to identify and fix runtime issues.
+
+Built for developers who want faster debugging cycles with real-time feedback and AI-assisted fixes.
 
 ---
 
@@ -43,6 +44,11 @@ def divide(a, b):
 
 print(divide(10, 0))
 
+Output
+
+*Detects ZeroDivisionError
+*Shows variable state at failure (b = 0)
+*Suggests fix: add conditional check for zero
 ---
 
 ## 🖥️ Interface Preview
@@ -88,6 +94,8 @@ Modules:
 - history.py → tracks iterations
 - gui.py → interactive interface
 
+Execution → Analysis → AI Reasoning → Feedback → History (temporal memory)
+
 ---
 
 ## ⚙️ Installation
@@ -95,7 +103,6 @@ Modules:
 ```bash
 git clone https://github.com/Tybent18/ai-debugger-pro
 cd ai-debugger-pro
-
 pip install -r requirements.txt
 
 ---
