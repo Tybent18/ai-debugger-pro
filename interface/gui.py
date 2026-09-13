@@ -2,11 +2,10 @@ import threading
 import tkinter as tk
 from tkinter import filedialog, scrolledtext
 
+from core.ai_suggester import ai_suggest_fix
 from core.diff import show_diff
 from core.history import ExecutionHistory
 from core.languages import SUPPORTED_LANGUAGES, check_syntax, run_code
-
-from core.ai_suggester import ai_suggest_fix
 
 
 class AIDebuggerGUI:
