@@ -1,0 +1,67 @@
+name: Desktop release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: Linux
+            os: ubuntu-latest
+            binary_name: ai-debugger-pro-linux
+            artifact_path: dist/ai-debugger-pro-linux
+          - platform: Windows
+            os: windows-latest
+            binary_name: ai-debugger-pro-windows
+            artifact_path: dist/ai-debugger-pro-windows.exe
+          - platform: macOS
+            os: macos-latest
+            binary_name: ai-debugger-pro-macos
+            artifact_path: dist/ai-debugger-pro-macos.zip
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[release]"
+      - name: Build standalone executable
+        run: >-
+          pyinstaller --noconfirm --clean --onefile --windowed
+          --name ${{ matrix.binary_name }} main.py
+      - name: Package macOS application
+        if: matrix.platform == 'macOS'
+        run: ditto -c -k --keepParent dist/ai-debugger-pro-macos.app dist/ai-debugger-pro-macos.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.binary_name }}
+          path: ${{ matrix.artifact_path }}
+          if-no-files-found: error
+
+  publish:
+    name: Publish GitHub release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+      - name: Publish tagged release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" release-assets/* --generate-notes --verify-tag

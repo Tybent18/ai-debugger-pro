@@ -14,6 +14,7 @@ dependencies = ["openai>=1.0,<3"]
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.6,<1"]
 demo = ["Pillow>=10,<13"]
+release = ["pyinstaller>=6.10,<7"]
 
 [project.scripts]
 ai-debugger-pro = "cli:main"
