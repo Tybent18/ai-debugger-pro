@@ -13,6 +13,22 @@ execution, keeps an in-memory history, and compares consecutive code versions.
 
 ![Demo](assets/demo.gif)
 
+## Desktop workspace
+
+The desktop interface uses a dark IDE-style workspace with a line-numbered editor, resizable
+history and result panels, and dedicated tabs for output, diagnoses, proposed diffs, and regression
+tests. Repair states use distinct success, failure, warning, and loading indicators.
+
+Keyboard shortcuts:
+
+| Action | Shortcut |
+| --- | --- |
+| Run | `F5` |
+| Diagnose | `Ctrl+D` |
+| Apply and verify | `Ctrl+Enter` |
+| Open | `Ctrl+O` |
+| Save | `Ctrl+S` |
+
 ## Current capabilities
 
 - Python syntax validation while typing
