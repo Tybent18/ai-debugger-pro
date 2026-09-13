@@ -1,0 +1,19 @@
+{
+  "name": "ai-debugger-pro",
+  "displayName": "AI Debugger Pro",
+  "description": "Run and diagnose the active source file with AI Debugger Pro.",
+  "version": "0.1.0",
+  "engines": {"vscode": "^1.90.0"},
+  "categories": ["Debuggers", "Other"],
+  "activationEvents": ["onCommand:aiDebuggerPro.run", "onCommand:aiDebuggerPro.diagnose"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {"command": "aiDebuggerPro.run", "title": "AI Debugger Pro: Run Active File"},
+      {"command": "aiDebuggerPro.diagnose", "title": "AI Debugger Pro: Diagnose Active File"}
+    ]
+  },
+  "scripts": {"lint": "node --check extension.js"},
+  "license": "MIT"
+}
+

@@ -6,9 +6,10 @@ AI Debugger Pro is an early-stage Python desktop prototype that combines determi
 execution with optional LLM-assisted error interpretation. It supports Python, C, C++, and Java
 execution, keeps an in-memory history, and compares consecutive code versions.
 
-> [!WARNING]
-> Programs run in local subprocesses with timeouts. This is **not a security sandbox**. Only run
-> code you trust. A containerized sandbox is planned for a future release.
+> [!IMPORTANT]
+> Docker is the default execution backend and applies defense-in-depth restrictions. No sandbox is
+> an absolute security boundary; keep Docker updated and do not treat this prototype as a hosted
+> execution service. Local execution is disabled unless explicitly selected.
 
 ![Demo](assets/demo.gif)
 
@@ -26,12 +27,18 @@ execution, keeps an in-memory history, and compares consecutive code versions.
 - Persistent execution and repair history
 - Unified diffs between recent code versions
 - Open and save source files
+- Docker execution with no network, resource limits, a read-only container root, dropped
+  capabilities, and no inherited API secrets
+- Python traceback frames with bounded local-variable representations
+- Bounded multi-file project discovery for AI context
+- CLI commands for execution, diagnosis, and project inspection
+- Starter VS Code extension commands
 
 ## What it does not do yet
 
-- Securely execute untrusted code
-- Trace every executed line or capture local variables
-- Analyze multi-file projects
+- Provide operating-system-grade isolation without Docker
+- Trace every successful statement; current tracing focuses on exception frames
+- Execute arbitrary multi-service projects as one unit
 
 Those boundaries are deliberate: this README describes the current prototype, not its future
 roadmap wearing a fake moustache.
@@ -42,6 +49,7 @@ roadmap wearing a fake moustache.
 - Tkinter (included with most Python installations)
 - Optional: an OpenAI API key for AI suggestions
 - `gcc` for C, `g++` for C++, and a JDK providing `javac`/`java` for Java
+- Docker for the default restricted execution backend
 
 ## Installation
 
@@ -86,10 +94,24 @@ and provides deterministic offline troubleshooting guidance.
 python main.py
 ```
 
-Or, after installation:
+Launch the desktop interface after installation:
 
 ```bash
-ai-debugger-pro
+ai-debugger-pro-gui
+```
+
+Use the CLI:
+
+```bash
+ai-debugger-pro run examples/broken.py
+ai-debugger-pro diagnose examples/broken.py --json
+ai-debugger-pro project ./my-project
+```
+
+Docker is used by default. To deliberately run trusted code without Docker:
+
+```bash
+AI_DEBUGGER_EXECUTION_BACKEND=local AI_DEBUGGER_ALLOW_LOCAL_EXECUTION=1 ai-debugger-pro run app.py --backend local
 ```
 
 ## Example
@@ -119,12 +141,16 @@ Editor -> Syntax check -> Language runner -> Captured failure
 | --- | --- |
 | `core/analyzer.py` | Python syntax validation |
 | `core/executor.py` | Local language execution and output capture |
+| `core/sandbox.py` | Restricted Docker execution and exception-state capture |
+| `core/project.py` | Bounded multi-file project discovery and context |
 | `core/languages.py` | Language registry and routing |
 | `core/ai_suggester.py` | Structured AI request with offline fallback |
 | `core/diagnostics.py` | Validated repair proposal model |
 | `core/history.py` | Persistent execution and repair history |
 | `core/diff.py` | Unified code diffs |
 | `interface/gui.py` | Tkinter desktop interface |
+| `cli.py` | Scriptable command-line interface |
+| `vscode-extension/` | VS Code command integration starter |
 
 ## Tests
 
