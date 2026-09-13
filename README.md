@@ -1,6 +1,6 @@
 # AI Debugger Pro
 
-**Run code, capture failures, and request an AI-assisted explanation from one desktop interface.**
+**Run code, diagnose failures, preview repairs, and verify approved fixes from one desktop interface.**
 
 AI Debugger Pro is an early-stage Python desktop prototype that combines deterministic code
 execution with optional LLM-assisted error interpretation. It supports Python, C, C++, and Java
@@ -17,9 +17,13 @@ execution, keeps an in-memory history, and compares consecutive code versions.
 - Python syntax validation while typing
 - Python, C, C++, and Java execution
 - Compilation and runtime output capture
-- Optional AI explanations for failed runs
+- Structured AI diagnoses for failed runs
+- Proposed patch preview with unified diff
+- Explicit approve/reject controls
+- Automatic rerun after an approved repair
+- Suggested regression-test generation
 - Responsive background AI requests
-- In-memory execution history
+- Persistent execution and repair history
 - Unified diffs between recent code versions
 - Open and save source files
 
@@ -27,9 +31,7 @@ execution, keeps an in-memory history, and compares consecutive code versions.
 
 - Securely execute untrusted code
 - Trace every executed line or capture local variables
-- Apply and verify AI-generated patches automatically
 - Analyze multi-file projects
-- Persist history between application sessions
 
 Those boundaries are deliberate: this README describes the current prototype, not its future
 roadmap wearing a fake moustache.
@@ -99,16 +101,18 @@ def divide(a, b):
 print(divide(10, 0))
 ```
 
-The application captures the `ZeroDivisionError` and can request an explanation and suggested
-correction. Suggestions are clearly marked as unverified; the current version does not apply them
-automatically.
+The application captures the `ZeroDivisionError`, requests a structured diagnosis, previews the
+proposed correction as a diff, and waits for approval. An approved patch is applied and rerun so
+the result is recorded as either a verified or failed repair.
 
 ## Architecture
 
 ```text
-Editor -> Syntax check -> Language runner -> Captured output
-                                         -> Optional AI explanation
-                                         -> In-memory history and diff
+Editor -> Syntax check -> Language runner -> Captured failure
+                                         -> Structured diagnosis
+                                         -> Diff and approval gate
+                                         -> Apply -> Rerun -> Verified result
+                                         -> Persistent history
 ```
 
 | Module | Responsibility |
@@ -116,8 +120,9 @@ Editor -> Syntax check -> Language runner -> Captured output
 | `core/analyzer.py` | Python syntax validation |
 | `core/executor.py` | Local language execution and output capture |
 | `core/languages.py` | Language registry and routing |
-| `core/ai_suggester.py` | Configurable AI request with offline fallback |
-| `core/history.py` | In-memory execution history |
+| `core/ai_suggester.py` | Structured AI request with offline fallback |
+| `core/diagnostics.py` | Validated repair proposal model |
+| `core/history.py` | Persistent execution and repair history |
 | `core/diff.py` | Unified code diffs |
 | `interface/gui.py` | Tkinter desktop interface |
 
@@ -138,4 +143,3 @@ GitHub Actions runs the same checks on Python 3.10 and 3.12.
 ## License
 
 MIT
-
