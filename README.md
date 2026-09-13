@@ -13,6 +13,28 @@ execution, keeps an in-memory history, and compares consecutive code versions.
 
 ![Demo](assets/demo.gif)
 
+### Feature demos
+
+The showcase can be regenerated from the real desktop interface with deterministic offline data.
+Each recording focuses on one part of the repair workflow:
+
+| Workflow | Demo |
+| --- | --- |
+| Exception output and captured locals | [Exception diagnosis](assets/demos/exception-diagnosis.gif) |
+| Diff preview and explicit approval gate | [Approval-gated repair](assets/demos/approval-repair.gif) |
+| Suggested test and verified rerun | [Regression verification](assets/demos/regression-verification.gif) |
+
+Generate every GIF locally on Linux:
+
+```bash
+python -m pip install -e ".[demo]"
+xvfb-run --auto-servernum python tools/generate_demos.py
+```
+
+Use `--scenario approval-repair` to record only one workflow. The manual **Generate product
+demos** GitHub Action produces the same files as a downloadable artifact without requiring an API
+key or Docker.
+
 ## Desktop workspace
 
 The desktop interface uses a dark IDE-style workspace with a line-numbered editor, resizable

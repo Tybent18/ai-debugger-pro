@@ -12,14 +12,15 @@ from interface.widgets import CodeEditor
 
 
 class AIDebuggerGUI:
-    def __init__(self, master):
+    def __init__(self, master, *, history_store=None, runner=None):
         self.master = master
         self.master.title("AI Debugger Pro")
         self.master.geometry("1240x780")
         self.master.minsize(900, 620)
         self._configure_styles()
 
-        self.history_store = ExecutionHistory()
+        self.history_store = history_store or ExecutionHistory()
+        self._runner = runner
         self.pending_diagnosis = None
         self.pending_original_code = ""
         self.pending_run_id = None
@@ -163,6 +164,8 @@ class AIDebuggerGUI:
             self._set_state("Syntax issue detected", "warning")
 
     def _run(self, code, language):
+        if self._runner is not None:
+            return self._runner(code, language)
         ok, message = check_syntax(language, code)
         return run_code(language, code) if ok else (ok, message)
 
