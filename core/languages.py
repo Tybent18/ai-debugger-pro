@@ -6,6 +6,7 @@ from .executor import (
     python_run,
     python_syntax_check,
 )
+from .sandbox import run_sandboxed
 
 
 class Language:
@@ -30,11 +31,12 @@ SUPPORTED_LANGUAGES = {
 }
 
 
-def run_code(language: str, code: str):
+def run_code(language: str, code: str, backend: str | None = None):
     selected = SUPPORTED_LANGUAGES.get(language)
     if not selected:
         return False, f"Unsupported language: {language}"
-    return selected.runner(code)
+    result = run_sandboxed(language, code, backend=backend)
+    return result.success, result.diagnostic_text()
 
 
 def check_syntax(language: str, code: str):
@@ -42,4 +44,3 @@ def check_syntax(language: str, code: str):
     if not selected or not selected.syntax_checker:
         return True, "No syntax checker available."
     return selected.syntax_checker(code)
-
