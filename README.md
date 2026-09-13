@@ -4,7 +4,7 @@
 
 AI Debugger Pro is an early-stage Python desktop prototype that combines deterministic code
 execution with optional LLM-assisted error interpretation. It supports Python, C, C++, and Java
-execution, keeps an in-memory history, and compares consecutive code versions.
+execution, keeps a persistent local history, and compares consecutive code versions.
 
 > [!IMPORTANT]
 > Docker is the default execution backend and applies defense-in-depth restrictions. No sandbox is
@@ -18,11 +18,23 @@ execution, keeps an in-memory history, and compares consecutive code versions.
 The showcase can be regenerated from the real desktop interface with deterministic offline data.
 Each recording focuses on one part of the repair workflow:
 
-| Workflow | Demo |
-| --- | --- |
-| Exception output and captured locals | [Exception diagnosis](assets/demos/exception-diagnosis.gif) |
-| Diff preview and explicit approval gate | [Approval-gated repair](assets/demos/approval-repair.gif) |
-| Suggested test and verified rerun | [Regression verification](assets/demos/regression-verification.gif) |
+#### Exception diagnosis
+
+Captured traceback context and local variables turn a crash into an actionable explanation.
+
+![Exception diagnosis](assets/demos/exception-diagnosis.gif)
+
+#### Approval-gated repair
+
+The proposed source change remains a preview until the user explicitly approves it.
+
+![Approval-gated repair](assets/demos/approval-repair.gif)
+
+#### Regression verification
+
+The approved repair is rerun and recorded alongside a focused regression check.
+
+![Regression verification](assets/demos/regression-verification.gif)
 
 Generate every GIF locally on Linux:
 
