@@ -1,92 +1,85 @@
-from openai import OpenAI
+import os
+from collections.abc import Callable
 
-client = OpenAI()
+DEFAULT_MODEL = "gpt-4o-mini"
 
-# ---------------------------------------------------------
-# Offline fallback (guarantees your app never crashes)
-# ---------------------------------------------------------
-def offline_fix(code_text: str, error_msg: str, language: str) -> str:
-    return f"""
-[OFFLINE MODE - NO API AVAILABLE]
 
+def offline_fix(code_text: str, error_msg: str, language: str, reason: str) -> str:
+    """Return deterministic guidance when an AI request cannot be made."""
+    return f"""[OFFLINE MODE]
+
+AI assistance is unavailable: {reason}
 Language: {language}
 
-Possible issue detected:
+Detected issue:
 {error_msg}
 
-Suggestion:
-- Check syntax near the error line
-- Ensure correct indentation
-- Verify function/variable names
-- Re-run after fixing obvious typos
+Next checks:
+- Inspect the first relevant line in the error output
+- Verify syntax, indentation, names, types, and required dependencies
+- Make one small change and run the program again
 
-Code preview (first 200 chars):
+Code preview:
 {code_text[:200]}
 """
 
 
-# ---------------------------------------------------------
-# MAIN AI FIX FUNCTION (with fallback chain)
-# ---------------------------------------------------------
-def ai_suggest_fix(code_text, error_msg, language="Python"):
-    if not code_text or not error_msg:
-        return "Missing code or error message."
+def _default_client_factory():
+    from openai import OpenAI
 
-    prompt = f"""
-You are a debugging assistant.
+    return OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
-Language: {language}
+
+def ai_suggest_fix(
+    code_text: str,
+    error_msg: str,
+    language: str = "Python",
+    client_factory: Callable | None = None,
+) -> str:
+    """Request an explanation and suggested correction, with a safe offline fallback."""
+    if not code_text or not code_text.strip():
+        return "Missing code."
+    if not error_msg or not error_msg.strip():
+        return "Missing error message."
+
+    if not os.getenv("OPENAI_API_KEY") and client_factory is None:
+        return offline_fix(
+            code_text,
+            error_msg,
+            language,
+            "OPENAI_API_KEY is not configured",
+        )
+
+    prompt = f"""Language: {language}
 
 Code:
 {code_text}
 
-Error:
+Error output:
 {error_msg}
 
-Explain the issue briefly and provide corrected code.
+Explain the likely cause briefly, then provide a corrected code example. Do not claim the
+correction was verified; the application has not run it yet.
 """
 
-    # -----------------------------------------------------
-    # 1. Try best model first
-    # -----------------------------------------------------
     try:
+        factory = client_factory or _default_client_factory
+        client = factory()
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=os.getenv("OPENAI_MODEL", DEFAULT_MODEL),
             messages=[
-                {"role": "system", "content": "You are a precise debugging assistant."},
-                {"role": "user", "content": prompt}
+                {
+                    "role": "system",
+                    "content": "You are a precise debugging assistant. Separate explanation and code.",
+                },
+                {"role": "user", "content": prompt},
             ],
             temperature=0.2,
-            max_tokens=500
+            max_tokens=700,
         )
-
-        return response.choices[0].message.content.strip()
-
-    except Exception as e:
-        error_str = str(e).lower()
-
-        # -------------------------------------------------
-        # 2. QUOTA / LIMIT HIT → fallback model
-        # -------------------------------------------------
-        if "quota" in error_str or "429" in error_str or "insufficient" in error_str:
-            try:
-                response = client.chat.completions.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                        {"role": "system", "content": "You are a debugging assistant."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    temperature=0.2,
-                    max_tokens=400
-                )
-
-                return response.choices[0].message.content.strip()
-
-            except Exception:
-                # fallback to offline if even this fails
-                return offline_fix(code_text, error_msg, language)
-
-        # -------------------------------------------------
-        # 3. ALL OTHER ERRORS → offline mode
-        # -------------------------------------------------
-        return offline_fix(code_text, error_msg, language)
+        content = response.choices[0].message.content
+        if not content or not content.strip():
+            raise ValueError("The AI service returned an empty response")
+        return content.strip()
+    except Exception as exc:  # noqa: BLE001 - all provider failures use offline guidance
+        return offline_fix(code_text, error_msg, language, str(exc))

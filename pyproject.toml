@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-debugger-pro"
+version = "0.1.0"
+description = "A desktop prototype for multi-language execution and AI-assisted error explanations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["openai>=1.0,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.6,<1"]
+
+[project.scripts]
+ai-debugger-pro = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+include = ["core*", "interface*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
