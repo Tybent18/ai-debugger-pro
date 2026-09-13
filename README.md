@@ -2,9 +2,13 @@
 
 **Run code, diagnose failures, preview repairs, and verify approved fixes from one desktop interface.**
 
-AI Debugger Pro is an early-stage Python desktop prototype that combines deterministic code
-execution with optional LLM-assisted error interpretation. It supports Python, C, C++, and Java
-execution, keeps a persistent local history, and compares consecutive code versions.
+[![CI](https://github.com/Tybent18/ai-debugger-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/Tybent18/ai-debugger-pro/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-22c55e)](LICENSE)
+
+AI Debugger Pro is a local, security-conscious AI-assisted debugging workspace. It combines
+deterministic execution with optional LLM-assisted error interpretation, supports Python, C, C++,
+and Java, keeps persistent local history, and compares consecutive code versions.
 
 > [!IMPORTANT]
 > Docker is the default execution backend and applies defense-in-depth restrictions. No sandbox is
@@ -102,6 +106,17 @@ roadmap wearing a fake moustache.
 - Docker for the default restricted execution backend
 
 ## Installation
+
+### Download a desktop build
+
+Tagged versions automatically produce standalone desktop executables for Windows, macOS, and
+Linux. Download the appropriate bundle from the
+[latest GitHub release](https://github.com/Tybent18/ai-debugger-pro/releases/latest).
+
+The executable bundles the Python application; Docker remains required for the default restricted
+execution backend.
+
+### Install from source
 
 ```bash
 git clone https://github.com/Tybent18/ai-debugger-pro.git
