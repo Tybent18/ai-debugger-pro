@@ -11,6 +11,9 @@ These papers document the project in recommended reading order.
 3. [Empirical Evaluation Protocol for Human-Governed AI-Assisted Repair](03-evaluation-protocol/empirical-evaluation-protocol.pdf)  
    A preregistration-ready evaluation design. The protocol is complete; benchmark results are intentionally pending.
 
+4. [AI Debugger Pro: Security Threat Model for Human-Governed AI-Assisted Repair](04-security-threat-model/security-threat-model.pdf)  
+   A repository-grounded threat model covering execution isolation, diagnostic-data exposure, prompt injection, unsafe repair acceptance, verification limits, and prioritized mitigations. The [editable source](04-security-threat-model/security-threat-model.md) is included.
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
