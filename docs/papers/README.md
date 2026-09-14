@@ -2,6 +2,8 @@
 
 These papers document the project in recommended reading order.
 
+[Begin with Paper 0: Foundation Overview](00-foundation-overview/ai-debugger-pro-foundation-overview.md), or continue directly to the twelve-paper AI Debugger Pro research series below.
+
 1. [From Stateless Execution to Human-Governed AI Repair: The Evolution of AI Debugger Pro, Versions 0–6](01-system-evolution/system-evolution-v0-v6.pdf)  
    A system-evolution case study covering the path from a stateless code runner to an approval-gated, human-governed repair workflow.
 
@@ -38,6 +40,6 @@ These papers document the project in recommended reading order.
 12. [AI Debugger Pro: Reproducible Engineering and Release Evidence](12-reproducible-engineering/reproducible-engineering-and-release-evidence.md)  
     Final series paper defining the evidence graph from source commit through independent replication. [PDF](12-reproducible-engineering/reproducible-engineering-and-release-evidence.pdf) · [artifact manifest](12-reproducible-engineering/data/artifact-manifest.csv) · [claim-evidence matrix](12-reproducible-engineering/data/claim-evidence-matrix.csv) · [release checklist](12-reproducible-engineering/data/release-readiness-checklist.csv)
 
-## Historical paper
+## Historical foundation
 
-- [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
+- [AI Debugger Pro: Foundation Overview](00-foundation-overview/ai-debugger-pro-foundation-overview.md) preserves the original AI Studio Debugger concept and connects it to the modern series. [PDF](00-foundation-overview/ai-debugger-pro-foundation-overview.pdf) · [folder](00-foundation-overview/README.md)

@@ -244,8 +244,7 @@ GitHub Actions runs the same checks on Python 3.10 and 3.12.
 | [AI Debugger Pro: Reproducible Engineering and Release Evidence](docs/papers/12-reproducible-engineering/reproducible-engineering-and-release-evidence.pdf) | Complete; series finale | An evidence graph connecting commits, environments, raw results, claims, release artifacts, and independent replication |
 
 See the [publication catalog](docs/papers/README.md) for reading order and scope. The
-[original AI Studio Debugger paper](docs/AI%20Studio%20Debugger.pdf) is retained as a historical
-V0–V4 snapshot.
+[AI Debugger Pro Foundation Overview](docs/papers/00-foundation-overview/ai-debugger-pro-foundation-overview.md) preserves the original AI Studio Debugger concept as a navigable historical edition, with its [archived PDF](docs/papers/00-foundation-overview/ai-debugger-pro-foundation-overview.pdf).
 
 ## License
 
