@@ -14,6 +14,9 @@ These papers document the project in recommended reading order.
 4. [AI Debugger Pro: Security Threat Model for Human-Governed AI-Assisted Repair](04-security-threat-model/security-threat-model.pdf)  
    A repository-grounded threat model covering execution isolation, diagnostic-data exposure, prompt injection, unsafe repair acceptance, verification limits, and prioritized mitigations. The [editable source](04-security-threat-model/security-threat-model.md) is included.
 
+5. [AI Debugger Pro: Repair Verification, Evidence, and Trust](05-repair-verification-and-trust/repair-verification-and-trust.pdf)  
+   A technical assurance framework defining scoped verification labels, immutable evidence, independent oracles, regression strategy, provenance, and reviewer decision support. The [editable source](05-repair-verification-and-trust/repair-verification-and-trust.md) is included.
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
