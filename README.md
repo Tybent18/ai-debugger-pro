@@ -235,6 +235,7 @@ GitHub Actions runs the same checks on Python 3.10 and 3.12.
 | [Empirical Evaluation Protocol for Human-Governed AI-Assisted Repair](docs/papers/03-evaluation-protocol/empirical-evaluation-protocol.pdf) | Protocol complete; results pending | A preregistration-ready benchmark design for diagnosis, repair, verification, security, and human decision support |
 | [AI Debugger Pro: Security Threat Model for Human-Governed AI-Assisted Repair](docs/papers/04-security-threat-model/security-threat-model.pdf) | Complete | Assets, adversaries, trust boundaries, scored risks, implemented controls, and a prioritized hardening roadmap |
 | [AI Debugger Pro: Repair Verification, Evidence, and Trust](docs/papers/05-repair-verification-and-trust/repair-verification-and-trust.pdf) | Complete | An evidence ladder that separates rerun success, behavioral checks, regressions, policy, and reproducibility |
+| [AI Debugger Pro: Multi-Language Execution Architecture](docs/papers/06-multi-language-execution/multi-language-execution-architecture.pdf) | Complete | A capability-driven architecture for Python, C, C++, and Java execution, diagnostics, provenance, and extension |
 
 See the [publication catalog](docs/papers/README.md) for reading order and scope. The
 [original AI Studio Debugger paper](docs/AI%20Studio%20Debugger.pdf) is retained as a historical
