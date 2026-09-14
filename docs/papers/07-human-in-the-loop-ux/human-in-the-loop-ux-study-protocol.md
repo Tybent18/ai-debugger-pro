@@ -1,5 +1,10 @@
 # AI Debugger Pro: Human-in-the-Loop UX and Decision-Support Study Protocol
 
+> [← Paper 6: Multi-Language Execution](../06-multi-language-execution/multi-language-execution-architecture.md) · [Publication catalog](../README.md) · [Paper 8: Benchmark Results →](../08-benchmark-results/benchmark-results-and-comparative-evaluation.md)
+
+---
+
+
 **T. R. Bentley**  
 Human Factors Study Protocol | September 2026  
 Repository: `Tybent18/ai-debugger-pro` | Assessed baseline: Phase 6

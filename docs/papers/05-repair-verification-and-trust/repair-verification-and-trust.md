@@ -1,5 +1,10 @@
 # AI Debugger Pro: Repair Verification, Evidence, and Trust
 
+> [← Paper 4: Security Threat Model](../04-security-threat-model/security-threat-model.md) · [Publication catalog](../README.md) · [Paper 6: Multi-Language Execution →](../06-multi-language-execution/multi-language-execution-architecture.md)
+
+---
+
+
 **T. R. Bentley**  
 Technical Assurance Paper | September 2026  
 Repository: `Tybent18/ai-debugger-pro` | Assessed baseline: Phase 6
