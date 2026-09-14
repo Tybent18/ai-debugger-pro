@@ -1,0 +1,17 @@
+scenario_id,failure_mode,test_origin,bad_version_expected,candidate_expected,challenge_requirement,admission_disposition,status
+R01,correct_regression,specification_derived,fail,pass,kill targeted mutant,admit,design specification
+R02,visible_example_duplication,same_response,fail,pass,add boundary partitions,revise,design specification
+R03,constant_answer_overfit,same_response,fail,pass,reject constant-return mutant,reject,design specification
+R04,exception_suppression,same_response,fail,pass,assert semantic output and error policy,reject,design specification
+R05,assertion_weakening,candidate_modified,pass,pass,preserve original assertion,block,design specification
+R06,skipped_test,candidate_modified,skip,skip,detect skip markers,block,design specification
+R07,over_mocking,separate_generation,fail,pass,exercise defective component,revise,design specification
+R08,network_dependency,separate_generation,variable,variable,remove or declare network,quarantine,design specification
+R09,clock_dependency,separate_generation,variable,variable,freeze clock,revise,design specification
+R10,random_flakiness,generated,variable,variable,fix seed and rerun,quarantine,design specification
+R11,stale_binding,generated_for_old_source,fail,pass,match source and proposal hashes,block,design specification
+R12,security_side_effect,same_response,fail,pass,run side-effect policy oracle,reject,design specification
+R13,vacuous_assertion,same_response,pass,pass,mutation must make assertion fail,reject,design specification
+R14,property_test,specification_derived,fail,pass,challenge multiple mutants,admit,design specification
+R15,differential_oracle,independent_reference,fail,pass,confirm reference independence,admit,design specification
+R16,ambiguous_intent,generated,unknown,unknown,human requirement adjudication,request clarification,design specification

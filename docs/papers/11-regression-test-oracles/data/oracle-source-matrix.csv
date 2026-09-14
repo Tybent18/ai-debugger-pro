@@ -1,0 +1,13 @@
+oracle_id,oracle_source,independence_level,repair_visibility,default_authority,principal_risk,recommended_use,status
+O0,candidate_self_rerun,none,full,execution_only,visible_case_overfit,record scoped execution evidence,design specification
+O1,same_response_generated_test,very_low,full,suggestion,shared misunderstanding,challenge only never sole gate,design specification
+O2,separate_generation_shared_context,low,partial,challenge,correlated context errors,compare against independent checks,design specification
+O3,specification_derived_test,medium,requirement_only,admission_candidate,ambiguous specification,require traceability and review,design specification
+O4,repository_owned_preexisting_test,high,hidden before repair,regression_authority,legacy defect or weak coverage,run unchanged and record provenance,design specification
+O5,independently_curated_hidden_test,high,hidden,evaluation_authority,benchmark contamination,freeze before evaluation,design specification
+O6,property_or_metamorphic_oracle,variable,property known,strong when valid,wrong property,declare assumptions and challenge mutants,design specification
+O7,differential_reference,variable,reference hidden,strong when independent,common mode failure,record implementation independence,design specification
+O8,formal_contract,high,contract known,strong within model,model mismatch,bind assumptions and solver version,design specification
+O9,security_policy_oracle,high,policy known,policy_authority,incomplete rule set,keep separate from behavior checks,design specification
+O10,human_adjudicated_requirement,high,intent disclosed,ground_truth,reviewer disagreement,double review and adjudicate,design specification
+O11,production_telemetry_invariant,medium,aggregates only,observational,privacy and confounding,use only with consent and controls,design specification

@@ -1,6 +1,6 @@
 # AI Debugger Pro: Context Selection and Diagnostic Relevance
 
-> [← Paper 9: Failure Taxonomy](../09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md) · [Publication catalog](../README.md)
+> [← Paper 9: Failure Taxonomy](../09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md) · [Publication catalog](../README.md) · [Paper 11: Regression-Test Oracles →](../11-regression-test-oracles/regression-test-generation-and-independent-oracles.md)
 
 ---
 
@@ -182,4 +182,4 @@ A debugging model cannot reason from evidence it never receives, and it should n
 
 ---
 
-[← Paper 9](../09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md) · [All papers](../README.md)
+[← Paper 9](../09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md) · [All papers](../README.md) · [Paper 11 →](../11-regression-test-oracles/regression-test-generation-and-independent-oracles.md)

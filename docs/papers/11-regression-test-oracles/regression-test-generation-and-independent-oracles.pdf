@@ -1,0 +1,321 @@
+%PDF-1.4
+%AI-Debugger-Pro
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R] /Count 10 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 1606 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (Regression-Test Generation and Independent Oracles) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+BT /F1 10 Tf 54 690 Td (T. R. Bentley | Verification Engineering Paper | September 2026) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 660 Td (A repair and a regression test produced by the same model response are correlated evidence.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 646 Td (The test may encode the same misunderstanding, repeat only the visible case, weaken expected) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 632 Td (behavior, or ratify its own patch.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 608 Td (This paper separates test generation from verification authority through provenance classes,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 594 Td (admission gates, mutation challenges, hidden checks, and human review.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 570 Td (The attached datasets and diagrams are design specifications, not measured test-generation) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 556 Td (performance.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 532 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 510 Td (-) Tj ET
+BT /F1 10 Tf 78 510 Td (Principle: a repair may propose its witness, but cannot appoint that witness as) Tj ET
+BT /F1 10 Tf 78 496 Td (judge.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 477 Td (-) Tj ET
+BT /F1 10 Tf 78 477 Td (Package: Markdown, PDF, two CSV matrices, and three SVG diagrams.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (1 / 10) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 1319 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (1. Repository baseline and evidence gap) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (AI Debugger Pro currently accepts a structured regression-test suggestion, displays it, and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (lets the user save it. Approved source is rerun and recorded as a verified or failed repair.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 652 Td (Repository tests are not automatically discovered or executed during approval. One rerun and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (one generated check therefore cannot establish semantic correctness, regression freedom,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (security, or generality.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Preserve the human approval gate.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 559 Td (-) Tj ET
+BT /F1 10 Tf 78 559 Td (Scope every verification label.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Add independent evidence before stronger claims.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (2 / 10) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 1903 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (2. Oracle provenance hierarchy) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Oracle authority depends on origin, repair visibility, requirement traceability, and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (independence. Candidate reruns and same-response tests provide weak evidence.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (Repository-owned, hidden, property-based, formal, security, and adjudicated oracles can) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 648 Td (support stronger claims when assumptions are documented.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (Independence is graded rather than binary. Two artifacts can be separate files while sharing) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 610 Td (the same flawed premise.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 586 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 564 Td (-) Tj ET
+BT /F1 10 Tf 78 564 Td (Record author, creation time, source requirement, context overlap, visibility, and) Tj ET
+BT /F1 10 Tf 78 550 Td (modification history.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 531 Td (-) Tj ET
+BT /F1 10 Tf 78 531 Td (Generated tests remain visibly generated after human approval.) Tj ET
+0.84 0.9 1 rg 90 115 250 28 re f
+0.06 0.09 0.16 rg BT /F2 9 Tf 105 125 Td (O0 Rerun) Tj ET
+0.72 0.8200000000000001 1 rg 145 153 275 28 re f
+0.06 0.09 0.16 rg BT /F2 9 Tf 160 163 Td (O1 Generated) Tj ET
+0.6 0.74 1 rg 200 191 300 28 re f
+0.06 0.09 0.16 rg BT /F2 9 Tf 215 201 Td (O4 Repository) Tj ET
+0.48 0.66 1 rg 255 229 325 28 re f
+0.06 0.09 0.16 rg BT /F2 9 Tf 270 239 Td (O5 Hidden) Tj ET
+0.36 0.5800000000000001 1 rg 310 267 350 28 re f
+0.06 0.09 0.16 rg BT /F2 9 Tf 325 277 Td (O6+ Formal/Human) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (3 / 10) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 1337 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (3. Immutable test artifact contract) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Each test artifact carries a stable ID, language and framework, oracle class, requirement) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (reference, preconditions, fixtures, expected behavior, failure target, source and proposal) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (hashes, generator, context hash, mutation evidence, outcomes, and admission state.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Editing a test creates a new version and invalidates prior evidence. A candidate cannot) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (rewrite the check that rejected it.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Bind tests to exact source and proposal states.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 559 Td (-) Tj ET
+BT /F1 10 Tf 78 559 Td (Separate raw execution evidence from policy decisions.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Keep provenance queryable in history.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (4 / 10) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 1497 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (4. Admission pipeline) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (The six gates parse and isolate the test, bind it to independent intent, require fail-before) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (and pass-after behavior, challenge plausible wrong repairs, check noninterference, and admit) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (the result with scoped authority.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Possible outcomes are reject, revise, quarantine, admit, or request clarification.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 614 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 592 Td (-) Tj ET
+BT /F1 10 Tf 78 592 Td (A test that already passes on the known-bad version does not reproduce the defect.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 573 Td (-) Tj ET
+BT /F1 10 Tf 78 573 Td (A test that skips or weakens a stronger oracle is blocked.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 554 Td (-) Tj ET
+BT /F1 10 Tf 78 554 Td (Green is an observation, not a coronation.) Tj ET
+0.93 0.90 1 rg 70 105 470 135 re f
+0.06 0.09 0.16 rg BT /F2 10 Tf 85 205 Td (Parse -> Bind intent -> Fail bad -> Pass candidate -> Challenge -> Admit) Tj ET
+BT /F1 9 Tf 85 170 Td (Every gate records evidence and may reject, revise, quarantine, or escalate.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (5 / 10) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 1334 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (5. Failure modes) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Common failures include visible-example duplication, patch mirroring, constant-answer) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (acceptance, exception suppression, test weakening, over-mocking, environmental dependence,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (security blindness, flakiness, stale binding, vacuous properties, and oracle conflict.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Each failure needs a specific challenge rather than a generic pass/fail check.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 614 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 592 Td (-) Tj ET
+BT /F1 10 Tf 78 592 Td (Boundary partitions challenge overfit.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 573 Td (-) Tj ET
+BT /F1 10 Tf 78 573 Td (Semantic assertions challenge suppression.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 554 Td (-) Tj ET
+BT /F1 10 Tf 78 554 Td (Policy oracles challenge dangerous side effects.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 535 Td (-) Tj ET
+BT /F1 10 Tf 78 535 Td (Mutation checks expose vacuous tests.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (6 / 10) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 1458 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (6. Mutation and independent strategies) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Mutation testing evaluates whether a test distinguishes intended behavior from declared) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (plausible errors. Operators include condition inversions, boundary shifts, constant returns,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (removed exception paths, skipped branches, altered loop limits, and removed security checks.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Strong strategies include repository suites, specification-derived examples, property and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (metamorphic checks, differential references, formal contracts, security policies, and human) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 610 Td (adjudication.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 586 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 564 Td (-) Tj ET
+BT /F1 10 Tf 78 564 Td (Mutation score is not proof of correctness.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 545 Td (-) Tj ET
+BT /F1 10 Tf 78 545 Td (Surviving mutants reveal specific gaps.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 526 Td (-) Tj ET
+BT /F1 10 Tf 78 526 Td (Common-mode assumptions must be documented.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (7 / 10) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 1456 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (7. Language-specific harnesses) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Python should preserve pytest outcomes, assertion diffs, exception chains, fixture) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (provenance, and seeds. C and C++ require compiler profiles, return codes, sanitizer) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (evidence, and explicit handling of silent exits. Java requires JUnit outcomes, exception) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 648 Td (chains, classpath, packages, and build metadata.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (A shared result schema records build, discovery, execution, assertion, timeout, policy, and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 610 Td (artifact evidence while preserving language semantics.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 586 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 564 Td (-) Tj ET
+BT /F1 10 Tf 78 564 Td (Do not flatten compile and assertion failures into one bucket.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 545 Td (-) Tj ET
+BT /F1 10 Tf 78 545 Td (Record framework and toolchain versions.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 526 Td (-) Tj ET
+BT /F1 10 Tf 78 526 Td (Keep sandbox and side-effect evidence separate.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (8 / 10) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 1521 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (8. Frozen scenarios and evaluation) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Sixteen frozen scenarios specify expected admission outcomes for correct reproduction,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (overfit, suppression, weakening, skipped tests, mocks, environment dependence, flakiness,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (stale bindings, security effects, vacuity, properties, differential oracles, and ambiguous) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 648 Td (intent.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (Future measurements include reproduction rate, mutation score, overfit and suppression) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 610 Td (detection, security detection, flake rate, leakage, admission precision, and admission) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 596 Td (recall.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 572 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 550 Td (-) Tj ET
+BT /F1 10 Tf 78 550 Td (Generated tests never label themselves.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 531 Td (-) Tj ET
+BT /F1 10 Tf 78 531 Td (Model comparisons require hidden independent oracles.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 512 Td (-) Tj ET
+BT /F1 10 Tf 78 512 Td (Ambiguous intent requires adjudication, not invented certainty.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (9 / 10) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
+endobj
+23 0 obj
+<< /Length 1591 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (9. Human authority, roadmap, and conclusion) Tj ET
+0.55 0.23 0.95 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 11) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (The review surface should show origin, requirement link, test diff, affected production) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (code, bad-version failure, candidate pass, mutation challenges, side effects, and conflicts.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (Approval changes governance state but never erases provenance.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Implementation proceeds through provenance storage, test discovery and language execution,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (admission challenges, and interface plus preregistered evaluation.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 600 Td (Tests become accountable witnesses when provenance, challenge power, and authority remain) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 586 Td (separate.) Tj ET
+0.55 0.23 0.95 rg BT /F2 12 Tf 54 562 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Paper 10 -> Paper 11 navigation is included.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 521 Td (-) Tj ET
+BT /F1 10 Tf 78 521 Td (Final planned paper: Reproducible Engineering and Release Evidence.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 502 Td (-) Tj ET
+BT /F1 10 Tf 78 502 Td (A generated test can help; it cannot certify its own repair.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (10 / 10) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 23 0 R >>
+endobj
+25 0 obj
+<< /Title (AI Debugger Pro: Regression-Test Generation and Independent Oracles) /Author (T. R. Bentley) /Subject (Verification engineering and independent test oracles) >>
+endobj
+xref
+0 26
+0000000000 65535 f 
+0000000026 00000 n 
+0000000075 00000 n 
+0000000195 00000 n 
+0000000265 00000 n 
+0000000340 00000 n 
+0000001998 00000 n 
+0000002134 00000 n 
+0000003505 00000 n 
+0000003641 00000 n 
+0000005596 00000 n 
+0000005733 00000 n 
+0000007123 00000 n 
+0000007261 00000 n 
+0000008811 00000 n 
+0000008949 00000 n 
+0000010336 00000 n 
+0000010474 00000 n 
+0000011985 00000 n 
+0000012123 00000 n 
+0000013632 00000 n 
+0000013770 00000 n 
+0000015344 00000 n 
+0000015482 00000 n 
+0000017126 00000 n 
+0000017264 00000 n 
+trailer
+<< /Size 26 /Root 1 0 R /Info 25 0 R >>
+startxref
+17452
+%%EOF
