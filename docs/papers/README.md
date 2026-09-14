@@ -23,6 +23,16 @@ These papers document the project in recommended reading order.
 7. [AI Debugger Pro: Human-in-the-Loop UX and Decision-Support Study Protocol](07-human-in-the-loop-ux/human-in-the-loop-ux-study-protocol.pdf)  
    A preregistration-ready human-factors protocol evaluating decision accuracy, unsafe acceptance, automation bias, evidence labels, risky-change warnings, calibration, workload, and accessibility. The [editable source](07-human-in-the-loop-ux/human-in-the-loop-ux-study-protocol.md) is included.
 
+### 08 — Benchmark Results and Comparative Evaluation
+
+Empirical benchmark results for AI Debugger Pro, including multi-language
+execution classification, latency measurements, diagnostic evidence coverage,
+and CI validation.
+
+- [Read the paper](08-benchmark-results/benchmark-results-and-comparative-evaluation.pdf)
+- [Raw benchmark data](08-benchmark-results/frozen-execution-benchmark-raw.csv)
+- [Measured results](08-benchmark-results/measured-results.csv)
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
