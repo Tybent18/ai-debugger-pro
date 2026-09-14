@@ -32,6 +32,9 @@ These papers document the project in recommended reading order.
 10. [AI Debugger Pro: Context Selection and Diagnostic Relevance](10-context-selection/context-selection-and-diagnostic-relevance.md)  
     A repository-grounded context-engineering architecture with typed manifests, failure-directed selection, privacy and injection controls, deterministic budgets, and frozen validation scenarios. [PDF](10-context-selection/context-selection-and-diagnostic-relevance.pdf) · [context matrix](10-context-selection/data/context-source-matrix.csv) · [selection scenarios](10-context-selection/data/selection-scenarios.csv)
 
+11. [AI Debugger Pro: Regression-Test Generation and Independent Oracles](11-regression-test-oracles/regression-test-generation-and-independent-oracles.md)  
+    A verification-engineering architecture for oracle provenance, regression-test admission, mutation challenges, independent behavioral evidence, and scoped authority. [PDF](11-regression-test-oracles/regression-test-generation-and-independent-oracles.pdf) · [oracle matrix](11-regression-test-oracles/data/oracle-source-matrix.csv) · [frozen scenarios](11-regression-test-oracles/data/regression-test-scenarios.csv)
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.

@@ -12,4 +12,4 @@
 
 > These datasets specify a proposed architecture; they are not measured model-performance results.
 
-[← Paper 9](../09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md) · [All papers](../README.md)
+[← Paper 9](../09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md) · [All papers](../README.md) · [Paper 11 →](../11-regression-test-oracles/regression-test-generation-and-independent-oracles.md)
