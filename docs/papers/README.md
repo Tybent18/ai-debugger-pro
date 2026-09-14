@@ -29,6 +29,9 @@ These papers document the project in recommended reading order.
 9. [AI Debugger Pro: Failure Taxonomy for AI-Assisted Debugging](09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.md)  
    A measured taxonomy of syntax/compile, runtime, and timeout failures, including the silent nonzero-exit evidence gap. [PDF](09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.pdf) · [taxonomy data](09-failure-taxonomy/data/failure-taxonomy-data.csv)
 
+10. [AI Debugger Pro: Context Selection and Diagnostic Relevance](10-context-selection/context-selection-and-diagnostic-relevance.md)  
+    A repository-grounded context-engineering architecture with typed manifests, failure-directed selection, privacy and injection controls, deterministic budgets, and frozen validation scenarios. [PDF](10-context-selection/context-selection-and-diagnostic-relevance.pdf) · [context matrix](10-context-selection/data/context-source-matrix.csv) · [selection scenarios](10-context-selection/data/selection-scenarios.csv)
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.

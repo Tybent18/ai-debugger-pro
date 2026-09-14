@@ -1,0 +1,340 @@
+%PDF-1.4
+%AI-Debugger-Pro
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R] /Count 10 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 1762 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (Context Selection and Diagnostic Relevance) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+BT /F1 10 Tf 54 690 Td (T. R. Bentley | Context Engineering Paper | September 2026) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 660 Td (AI-assisted debugging depends not only on model capability but on which evidence reaches the) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 646 Td (model, how it is bounded, and whether its provenance remains visible.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 622 Td (This paper defines a typed, failure-directed context-selection architecture for AI Debugger) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 608 Td (Pro. It ranks evidence by relevance, freshness, trust, privacy risk, injection risk, and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 594 Td (token cost.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 570 Td (The attached CSV files and charts are design specifications. They are not measured) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 556 Td (model-performance or participant results.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 532 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 510 Td (-) Tj ET
+BT /F1 10 Tf 78 510 Td (Repository-grounded baseline: source, error output, bounded project discovery, and) Tj ET
+BT /F1 10 Tf 78 496 Td (Python exception state.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 477 Td (-) Tj ET
+BT /F1 10 Tf 78 477 Td (Core principle: context is a governed evidence package, not a convenient text dump.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 458 Td (-) Tj ET
+BT /F1 10 Tf 78 458 Td (Navigation: Paper 9 -> Paper 10 -> publication catalog.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (1 / 10) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 1592 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (1. Problem and repository baseline) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (More context is not automatically better. Large prompts can bury the failing line, expose) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (unrelated secrets, import instruction-like project text, and exhaust the budget before) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (critical evidence appears.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Too little context produces plausible diagnoses untethered from imports, declarations, call) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (sites, configuration, tests, or dynamic state.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 600 Td (The current system provides useful raw material but does not yet expose a unified ranking) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 586 Td (policy, immutable context manifest, or complete source-to-prompt provenance ledger.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 562 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Paper 8 measured 87.5% nonempty failure-evidence coverage.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 521 Td (-) Tj ET
+BT /F1 10 Tf 78 521 Td (Paper 9 separates nonempty evidence from actionable evidence.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 502 Td (-) Tj ET
+BT /F1 10 Tf 78 502 Td (Paper 10 governs the package used for diagnosis.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (2 / 10) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 1416 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (2. Design objectives) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (The proposed selector optimizes eight objectives without collapsing them into one score:) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (relevance, minimality, freshness, privacy, integrity, reproducibility, language parity, and) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (appropriate abstention.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 638 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 616 Td (-) Tj ET
+BT /F1 10 Tf 78 616 Td (Prefer evidence tied to the failing phase, location, symbol, or call path.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 597 Td (-) Tj ET
+BT /F1 10 Tf 78 597 Td (Exclude material that does not inform a declared diagnostic hypothesis.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Bind context to source, failure, environment, and proposal hashes.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 559 Td (-) Tj ET
+BT /F1 10 Tf 78 559 Td (Treat repository text as untrusted data, never hidden authority.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Report insufficiency when required evidence is missing or contradictory.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (3 / 10) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 1462 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (3. Typed context manifest) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Each item carries an identifier, source kind, language, origin, content hash, source-version) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (hash, failure signature, capture time, size estimates, trust class, sensitivity class,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (selection score, truncation state, and inclusion rationale.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (A package becomes immutable when diagnosis begins. Any source or failure change invalidates) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (the package and marks downstream proposals stale.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Deterministic ordering supports replication.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 559 Td (-) Tj ET
+BT /F1 10 Tf 78 559 Td (Hashes bind evidence to the reviewed state.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Rationales make inclusion and exclusion auditable.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 521 Td (-) Tj ET
+BT /F1 10 Tf 78 521 Td (Redaction events are recorded without retaining the secret.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (4 / 10) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 1621 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (4. Evidence families and pipeline) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Direct failure evidence and focal source enter first. Dynamic state, dependency context,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (behavioral evidence, and project context are admitted through explicit relevance and risk) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (checks.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (The pipeline normalizes evidence, generates candidates, filters prohibited material, ranks) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (relevance, allocates a tiered budget, and serializes a reviewable manifest.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Critical evidence cannot be displaced by lower-priority files.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 559 Td (-) Tj ET
+BT /F1 10 Tf 78 559 Td (Unused budget may flow downward after reservations are satisfied.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Missing, stale, or contradictory evidence produces an incomplete-context state.) Tj ET
+0.88 0.95 1 rg 70 110 470 150 re f
+0.06 0.09 0.16 rg BT /F2 11 Tf 90 225 Td (Failure -> focal source -> dependencies -> tests -> project context) Tj ET
+BT /F1 9 Tf 90 190 Td (Every transition records relevance, risk, truncation, and provenance.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (5 / 10) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 2231 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (5. Budget and scoring policy) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (The default design reserves 20% for direct failure evidence, 35% for focal source, 15% for) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (dynamic state, 15% for dependencies, 10% for independent behavioral evidence, and 5% for) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (project metadata.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (These values are initial parameters for ablation, not empirically optimized constants.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (Scores guide selection but are not probabilities of correctness.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Positive terms: relevance, proximity, freshness, trust, and expected information) Tj ET
+BT /F1 10 Tf 78 564 Td (gain.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 545 Td (-) Tj ET
+BT /F1 10 Tf 78 545 Td (Negative terms: privacy risk, injection risk, redundancy, and token cost.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 526 Td (-) Tj ET
+BT /F1 10 Tf 78 526 Td (Compare source-only, error-only, unbounded-project, fixed-tier, and adaptive) Tj ET
+BT /F1 10 Tf 78 512 Td (policies.) Tj ET
+0.22 0.74 0.97 rg 170 245 280 20 re f
+0.06 0.09 0.16 rg BT /F1 9 Tf 80 251 Td (Focal) Tj ET
+BT /F2 9 Tf 460 251 Td (35%) Tj ET
+0.22 0.74 0.97 rg 170 215 160 20 re f
+0.06 0.09 0.16 rg BT /F1 9 Tf 80 221 Td (Failure) Tj ET
+BT /F2 9 Tf 340 221 Td (20%) Tj ET
+0.22 0.74 0.97 rg 170 185 120 20 re f
+0.06 0.09 0.16 rg BT /F1 9 Tf 80 191 Td (Dynamic) Tj ET
+BT /F2 9 Tf 300 191 Td (15%) Tj ET
+0.22 0.74 0.97 rg 170 155 120 20 re f
+0.06 0.09 0.16 rg BT /F1 9 Tf 80 161 Td (Dependency) Tj ET
+BT /F2 9 Tf 300 161 Td (15%) Tj ET
+0.22 0.74 0.97 rg 170 125 80 20 re f
+0.06 0.09 0.16 rg BT /F1 9 Tf 80 131 Td (Tests) Tj ET
+BT /F2 9 Tf 260 131 Td (10%) Tj ET
+0.22 0.74 0.97 rg 170 95 40 20 re f
+0.06 0.09 0.16 rg BT /F1 9 Tf 80 101 Td (Metadata) Tj ET
+BT /F2 9 Tf 220 101 Td (5%) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (6 / 10) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 1483 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (6. Privacy, security, and prompt injection) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Project files, logs, comments, documentation, and generated artifacts may contain) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (instruction-like language. The selector labels origin and trust class and prevents project) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (text from becoming higher-priority instructions.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Secret scanning and path exclusions occur before ranking. Local variables are bounded,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (redacted, typed, and previewed because they can be simultaneously valuable and sensitive.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Never include environment dumps, credentials, caches, binaries, or version-control) Tj ET
+BT /F1 10 Tf 78 564 Td (internals by convenience.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 545 Td (-) Tj ET
+BT /F1 10 Tf 78 545 Td (Hashing low-entropy secrets is not safe anonymization.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 526 Td (-) Tj ET
+BT /F1 10 Tf 78 526 Td (High-utility, high-risk evidence requires redaction or explicit approval.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (7 / 10) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 1354 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (7. Language-specific evidence) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (A common manifest supports comparison, while language adapters preserve different semantics.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (Python prioritizes tracebacks and bounded locals. C and C++ prioritize compiler diagnostics,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (declarations, headers, return codes, and native runtime evidence. Java adds exception) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 648 Td (chains, classes, package, classpath, and build metadata.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 624 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 602 Td (-) Tj ET
+BT /F1 10 Tf 78 602 Td (Python: hidden runtime state and dynamic types.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 583 Td (-) Tj ET
+BT /F1 10 Tf 78 583 Td (C: silent exits, macros, and undefined behavior.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 564 Td (-) Tj ET
+BT /F1 10 Tf 78 564 Td (C++: overload ambiguity and diagnostic floods.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 545 Td (-) Tj ET
+BT /F1 10 Tf 78 545 Td (Java: missing dependency and package context.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (8 / 10) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 1471 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (8. Frozen scenarios and evaluation) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Twelve prespecified scenarios cover syntax, compilation, runtime, timeout, missing) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (dependencies, stale evidence, prompt injection, secrets in locals, diagnostic floods, test) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (failures, ambiguous intent, and silent native exits.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Selector-only tests measure deterministic policy behavior. Diagnosis lift requires) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (independently labeled defects and must not be inferred from selection tests.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 600 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 578 Td (-) Tj ET
+BT /F1 10 Tf 78 578 Td (Critical-evidence recall and context precision.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 559 Td (-) Tj ET
+BT /F1 10 Tf 78 559 Td (Sensitive leakage and stale-context rejection.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 540 Td (-) Tj ET
+BT /F1 10 Tf 78 540 Td (Budget compliance and deterministic manifests.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 521 Td (-) Tj ET
+BT /F1 10 Tf 78 521 Td (Blinded root-cause accuracy under context ablations.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (9 / 10) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
+endobj
+23 0 obj
+<< /Length 1744 >>
+stream
+0.06 0.09 0.16 rg
+BT /F2 18 Tf 54 738 Td (9. Human review, roadmap, and conclusion) Tj ET
+0.02 0.52 0.75 RG 2 w 54 720 m 558 720 l S
+0.28 0.35 0.45 rg BT /F1 8 Tf 54 758 Td (AI Debugger Pro - Paper 10) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 690 Td (Before external transmission, the interface should show selected and excluded items,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 676 Td (truncation, warnings, estimated size, and reasons. Diagnoses should cite context item) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 662 Td (identifiers that open the exact local evidence.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 638 Td (Implementation proceeds through manifest foundation, failure-directed selection, governance) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 624 Td (controls, and preregistered evaluation.) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 600 Td (A model cannot reason from evidence it never receives, and it should not receive an entire) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 586 Td (repository merely because the token window is large. The narrow gate must be typed, bounded,) Tj ET
+0.06 0.09 0.16 rg BT /F1 10 Tf 54 572 Td (reviewable, reproducible, and honest about insufficiency.) Tj ET
+0.02 0.52 0.75 rg BT /F2 12 Tf 54 548 Td (Key points) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 526 Td (-) Tj ET
+BT /F1 10 Tf 78 526 Td (Data: context-source-matrix.csv and selection-scenarios.csv.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 507 Td (-) Tj ET
+BT /F1 10 Tf 78 507 Td (Charts: pipeline, proposed budget, and risk-utility map.) Tj ET
+0.06 0.09 0.16 rg BT /F2 10 Tf 62 488 Td (-) Tj ET
+BT /F1 10 Tf 78 488 Td (Next planned paper: Regression-Test Generation and Independent Oracles.) Tj ET
+0.28 0.35 0.45 rg BT /F1 8 Tf 520 35 Td (10 / 10) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 23 0 R >>
+endobj
+25 0 obj
+<< /Title (AI Debugger Pro: Context Selection and Diagnostic Relevance) /Author (T. R. Bentley) /Subject (Context engineering and diagnostic relevance) >>
+endobj
+xref
+0 26
+0000000000 65535 f 
+0000000026 00000 n 
+0000000075 00000 n 
+0000000195 00000 n 
+0000000265 00000 n 
+0000000340 00000 n 
+0000002154 00000 n 
+0000002290 00000 n 
+0000003934 00000 n 
+0000004070 00000 n 
+0000005538 00000 n 
+0000005675 00000 n 
+0000007190 00000 n 
+0000007328 00000 n 
+0000009002 00000 n 
+0000009140 00000 n 
+0000011424 00000 n 
+0000011562 00000 n 
+0000013098 00000 n 
+0000013236 00000 n 
+0000014643 00000 n 
+0000014781 00000 n 
+0000016305 00000 n 
+0000016443 00000 n 
+0000018240 00000 n 
+0000018378 00000 n 
+trailer
+<< /Size 26 /Root 1 0 R /Info 25 0 R >>
+startxref
+18549
+%%EOF

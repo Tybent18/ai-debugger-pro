@@ -1,0 +1,13 @@
+scenario_id,language,failure_class,required_context,excluded_context,expected_action,measurement_status
+S01,Python,syntax,syntax location and focal source,unrelated project files,select critical and focal context,design specification
+S02,C,compile,compiler diagnostic and referenced declaration,binaries and caches,select declaration chain,design specification
+S03,C++,compile,first actionable diagnostic and involved types,duplicated diagnostic flood,compress and preserve raw provenance,design specification
+S04,Java,runtime,exception chain and class declaration,unrelated packages,select stack-linked classes,design specification
+S05,Python,runtime,traceback and redacted locals,secret local value,redact before inclusion,design specification
+S06,C,runtime,synthesized return-code evidence,unrelated headers,mark evidence incomplete,design specification
+S07,C++,timeout,timeout state and focal loop,full repository,request targeted instrumentation,design specification
+S08,Java,missing_dependency,build metadata and missing symbol,source unrelated to dependency,select dependency evidence,design specification
+S09,Python,test_failure,failing assertion and implementation,model-generated replacement test,prefer independent oracle,design specification
+S10,Any,stale_evidence,source and failure hashes,stale manifest,block diagnosis and rebuild,design specification
+S11,Any,prompt_injection,origin and trust labels,instruction authority from project text,treat text as untrusted evidence,design specification
+S12,Any,ambiguous_intent,failure evidence and user requirement,guessed intent,abstain and request clarification,design specification
