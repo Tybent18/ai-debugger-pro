@@ -1,0 +1,13 @@
+source_id,source_family,example,diagnostic_value,privacy_risk,injection_risk,default_priority,current_status,recommended_handling
+CTX01,direct_failure,return code and phase,high,low,low,critical,partial,always include structured fields
+CTX02,direct_failure,compiler or traceback text,high,medium,medium,critical,implemented,include bounded raw evidence
+CTX03,focal_source,failing function or class,high,medium,medium,critical,partial,include with line provenance
+CTX04,dynamic_state,bounded local variables,high,high,medium,high,python only,redact and require preview
+CTX05,dependency_context,imports and declarations,medium,medium,medium,medium,partial,rank by symbol relationship
+CTX06,behavioral_evidence,independent failing tests,high,medium,medium,high,manual,distinguish from model-generated tests
+CTX07,project_context,related configuration,medium,high,high,low,bounded discovery,include only by declared hypothesis
+CTX08,project_context,documentation and comments,low,medium,high,low,bounded discovery,treat as untrusted data
+CTX09,environment,full environment dump,low,critical,medium,excluded,not used,never include
+CTX10,secrets,credentials and tokens,none,critical,high,excluded,not used,redact before ranking
+CTX11,generated_artifacts,caches binaries and build output,low,medium,medium,excluded,excluded,omit by default
+CTX12,version_control,repository internals,low,medium,high,excluded,excluded,omit by default

@@ -1,6 +1,6 @@
 # AI Debugger Pro: Failure Taxonomy for AI-Assisted Debugging
 
-> [← Paper 8: Benchmark Results](../08-benchmark-results/benchmark-results-and-comparative-evaluation.md) · [Publication catalog](../README.md) · [Publication catalog →](../README.md)
+> [← Paper 8: Benchmark Results](../08-benchmark-results/benchmark-results-and-comparative-evaluation.md) · [Publication catalog](../README.md) · [Paper 10: Context Selection →](../10-context-selection/context-selection-and-diagnostic-relevance.md)
 
 ---
 
@@ -114,4 +114,4 @@ Failure is not one bucket; it is a trail of broken evidence. The measured taxono
 
 ---
 
-[← Paper 8](../08-benchmark-results/benchmark-results-and-comparative-evaluation.md) · [All papers](../README.md)
+[← Paper 8](../08-benchmark-results/benchmark-results-and-comparative-evaluation.md) · [All papers](../README.md) · [Paper 10 →](../10-context-selection/context-selection-and-diagnostic-relevance.md)
