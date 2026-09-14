@@ -226,10 +226,17 @@ ruff check .
 
 GitHub Actions runs the same checks on Python 3.10 and 3.12.
 
-## Research notes
+## Research & publications
 
-- [Read the project paper](docs/paper.md)
-- [Download the original PDF](docs/AI%20Studio%20Debugger.pdf)
+| Paper | Status | Focus |
+| --- | --- | --- |
+| [From Stateless Execution to Human-Governed AI Repair: The Evolution of AI Debugger Pro, Versions 0–6](docs/papers/01-system-evolution/system-evolution-v0-v6.pdf) | Complete | How the project evolved from a stateless runner into an approval-gated repair system |
+| [AI Debugger Pro: Current Architecture and Human-Governed Repair Protocol](docs/papers/02-current-architecture/current-architecture-and-repair-protocol.pdf) | Complete | The authoritative current architecture, trust boundaries, and repair workflow |
+| [Empirical Evaluation Protocol for Human-Governed AI-Assisted Repair](docs/papers/03-evaluation-protocol/empirical-evaluation-protocol.pdf) | Protocol complete; results pending | A preregistration-ready benchmark design for diagnosis, repair, verification, security, and human decision support |
+
+See the [publication catalog](docs/papers/README.md) for reading order and scope. The
+[original AI Studio Debugger paper](docs/AI%20Studio%20Debugger.pdf) is retained as a historical
+V0–V4 snapshot.
 
 ## License
 
