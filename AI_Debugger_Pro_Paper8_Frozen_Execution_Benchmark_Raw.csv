@@ -1,0 +1,25 @@
+id,lang,kind,expected_success,observed_success,match,latency_ms,evidence_nonempty,output
+PY01,python,success,True,True,True,743.635,True,5
+PY02,python,syntax,False,False,True,795.067,True,"File ""/tmp/tmptayyorlh.py"", line 1     def f(:           ^ SyntaxError: invalid syntax"
+PY03,python,runtime,False,False,True,687.859,True,"Traceback (most recent call last):   File ""/tmp/tmpt9xw6qd6.py"", line 1, in <module>     print(1/0)           ~^~ ZeroDivisionError: division by zero"
+PY04,python,runtime,False,False,True,729.158,True,"Traceback (most recent call last):   File ""/tmp/tmplvjf2z8a.py"", line 1, in <module>     print(missing_name)           ^^^^^^^^^^^^ NameError: name 'missing_name' is not defined"
+PY05,python,success,True,True,True,773.515,True,10
+PY06,python,timeout,False,False,True,252.24,True,Execution timed out.
+PY07,python,success,True,True,True,764.683,True,4
+PY08,python,runtime,False,False,True,801.935,True,"Traceback (most recent call last):   File ""/tmp/tmp21606egt.py"", line 1, in <module>     raise ValueError('bad value') ValueError: bad value"
+C01,c,success,True,True,True,52.332,True,5
+C02,c,compile,False,False,True,9.259,True,/tmp/tmpk6z30jvh.c:1:11: error: expected declaration specifiers or ‘...’ before ‘{’ token     1 | int main( { return 0; }       |           ^
+C03,c,runtime,False,False,True,32.922,False,
+C04,c,success,True,True,True,39.873,True,8
+C05,c,timeout,False,False,True,281.788,True,Execution timed out.
+C06,c,compile,False,False,True,12.655,True,/tmp/tmpbmbeif04.c: In function ‘main’: /tmp/tmpbmbeif04.c:1:13: error: implicit declaration of function ‘does_not_exist’ [-Wimplicit-function-declaration]     1 | int main(){ does_not_exist(); return 0; }       |             ^~~~~~~~~~~~~~
+CPP01,cpp,success,True,True,True,284.149,True,7
+CPP02,cpp,compile,False,False,True,10.504,True,/tmp/tmpkofsa525.cpp:1:5: error: cannot declare ‘::main’ to be a global variable     1 | int main( { return 0; }       |     ^~~~ /tmp/tmpkofsa525.cpp:1:13: error: expected primary-expression before ‘return’     1 | int main( { return 0; } 
+CPP03,cpp,runtime,False,False,True,42.398,False,
+CPP04,cpp,success,True,True,True,280.945,True,3
+CPP05,cpp,timeout,False,False,True,291.72,True,Execution timed out.
+CPP06,cpp,compile,False,False,True,14.193,True,/tmp/tmp2ugfn_96.cpp: In function ‘int main()’: /tmp/tmp2ugfn_96.cpp:1:18: error: ‘cout’ is not a member of ‘std’     1 | int main(){ std::cout << 1; }       |                  ^~~~ /tmp/tmp2ugfn_96.cpp:1:1: note: ‘std::cout’ is defined in 
+JAVA01,java,success,True,True,True,419.59,True,9
+JAVA02,java,compile,False,False,True,380.305,True,/tmp/tmpz2uutrzj/Main.java:1: error: ';' expected public class Main { public static void main(String[] a) { System.out.println(1) } }                                                                                ^ 1 error
+JAVA03,java,runtime,False,False,True,489.193,True,"Exception in thread ""main"" java.lang.RuntimeException: x 	at Main.main(Main.java:1)"
+JAVA04,java,timeout,False,False,True,253.23,True,Execution timed out.
