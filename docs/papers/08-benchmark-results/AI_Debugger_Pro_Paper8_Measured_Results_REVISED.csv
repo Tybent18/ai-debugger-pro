@@ -1,0 +1,12 @@
+experiment,condition,metric,value,unit
+frozen_execution,all,attempted_cases,24.0,count
+frozen_execution,all,classification_matches,24.0,count
+frozen_execution,all,classification_accuracy,100.0,percent
+frozen_execution,all,median_latency,282.9685,ms
+frozen_execution,all,mean_latency,351.7978333333333,ms
+frozen_execution,all,failure_evidence_nonempty,14.0,count
+frozen_execution,all,failure_cases,16.0,count
+current_ci,python3.10,tests_passed,27.0,count
+current_ci,python3.10,pytest_runtime,1.12,s
+current_ci,python3.12,tests_passed,27.0,count
+current_ci,python3.12,pytest_runtime,1.17,s
