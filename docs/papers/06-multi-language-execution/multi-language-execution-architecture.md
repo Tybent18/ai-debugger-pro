@@ -1,5 +1,10 @@
 # AI Debugger Pro: Multi-Language Execution Architecture
 
+> [← Paper 5: Verification & Trust](../05-repair-verification-and-trust/repair-verification-and-trust.md) · [Publication catalog](../README.md) · [Paper 7: Human-in-the-Loop UX →](../07-human-in-the-loop-ux/human-in-the-loop-ux-study-protocol.md)
+
+---
+
+
 **T. R. Bentley**  
 Systems Architecture Paper | September 2026  
 Repository: `Tybent18/ai-debugger-pro` | Assessed baseline: Phase 6

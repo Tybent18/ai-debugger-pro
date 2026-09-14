@@ -237,6 +237,8 @@ GitHub Actions runs the same checks on Python 3.10 and 3.12.
 | [AI Debugger Pro: Repair Verification, Evidence, and Trust](docs/papers/05-repair-verification-and-trust/repair-verification-and-trust.pdf) | Complete | An evidence ladder that separates rerun success, behavioral checks, regressions, policy, and reproducibility |
 | [AI Debugger Pro: Multi-Language Execution Architecture](docs/papers/06-multi-language-execution/multi-language-execution-architecture.pdf) | Complete | A capability-driven architecture for Python, C, C++, and Java execution, diagnostics, provenance, and extension |
 | [AI Debugger Pro: Human-in-the-Loop UX and Decision-Support Study Protocol](docs/papers/07-human-in-the-loop-ux/human-in-the-loop-ux-study-protocol.pdf) | Protocol complete; results pending | A preregistration-ready study of approval accuracy, automation bias, calibration, evidence comprehension, and workload |
+| [AI Debugger Pro: Benchmark Results and Comparative Evaluation](docs/papers/08-benchmark-results/benchmark-results-and-comparative-evaluation.pdf) | Complete; measured baseline | A 24-case multi-language execution benchmark with latency, evidence-coverage, and CI results |
+| [AI Debugger Pro: Failure Taxonomy for AI-Assisted Debugging](docs/papers/09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.pdf) | Complete; measured taxonomy | A failure taxonomy grounded in the benchmark's observed syntax, compile, runtime, timeout, and evidence-gap data |
 
 See the [publication catalog](docs/papers/README.md) for reading order and scope. The
 [original AI Studio Debugger paper](docs/AI%20Studio%20Debugger.pdf) is retained as a historical

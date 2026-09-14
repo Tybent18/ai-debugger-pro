@@ -1,5 +1,10 @@
 # AI Debugger Pro: Security Threat Model for Human-Governed AI-Assisted Repair
 
+> [← Paper 3: Evaluation Protocol](../03-evaluation-protocol/empirical-evaluation-protocol.pdf) · [Publication catalog](../README.md) · [Paper 5: Verification & Trust →](../05-repair-verification-and-trust/repair-verification-and-trust.md)
+
+---
+
+
 **T. R. Bentley**  
 Security Threat Model | September 2026  
 Repository: `Tybent18/ai-debugger-pro` | Assessed baseline: Phase 6 plus publication branch
