@@ -1,6 +1,6 @@
 # AI Debugger Pro: Regression-Test Generation and Independent Oracles
 
-> [← Paper 10: Context Selection](../10-context-selection/context-selection-and-diagnostic-relevance.md) · [Publication catalog](../README.md)
+> [← Paper 10: Context Selection](../10-context-selection/context-selection-and-diagnostic-relevance.md) · [Publication catalog](../README.md) · [Paper 12: Reproducible Engineering →](../12-reproducible-engineering/reproducible-engineering-and-release-evidence.md)
 
 ---
 
@@ -198,4 +198,4 @@ A generated regression test can be useful evidence, but it cannot certify the re
 
 ---
 
-[← Paper 10](../10-context-selection/context-selection-and-diagnostic-relevance.md) · [All papers](../README.md)
+[← Paper 10](../10-context-selection/context-selection-and-diagnostic-relevance.md) · [All papers](../README.md) · [Paper 12: Reproducible Engineering →](../12-reproducible-engineering/reproducible-engineering-and-release-evidence.md)

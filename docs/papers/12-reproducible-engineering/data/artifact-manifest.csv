@@ -1,0 +1,17 @@
+artifact_id,artifact_type,canonical_path,source_commit_required,generator_required,environment_manifest_required,checksum_required,retention,status
+A01,source_tree,repository tag or commit,yes,no,no,yes,git and release,implemented
+A02,dependency_manifest,lockfile or SBOM,yes,yes,yes,yes,release bundle,proposed
+A03,environment_manifest,results environment JSON,yes,yes,no,yes,release bundle,partial
+A04,benchmark_manifest,benchmark cases and labels,yes,yes,yes,yes,repository,partial
+A05,raw_results,case-level JSON or CSV,yes,yes,yes,yes,repository and release,implemented for Paper 8
+A06,summary_results,aggregate CSV,yes,yes,yes,yes,repository and release,implemented for Paper 8
+A07,test_report,pytest or framework output,yes,yes,yes,yes,workflow artifact,partial
+A08,static_analysis_report,Ruff or equivalent,yes,yes,yes,yes,workflow artifact,partial
+A09,chart,SVG or PNG,yes,yes,yes,yes,repository,implemented for Papers 8-12
+A10,publication_source,Markdown,yes,no,no,yes,repository,implemented
+A11,publication_pdf,PDF,yes,yes,yes,yes,repository and release,implemented
+A12,desktop_binary,platform archive,yes,yes,yes,yes,GitHub release,workflow implemented
+A13,build_log,workflow log,yes,yes,yes,yes,workflow retention,implemented
+A14,signature,artifact signature,yes,yes,yes,yes,release,proposed
+A15,provenance_attestation,SLSA-style statement,yes,yes,yes,yes,release,proposed
+A16,replication_report,independent result package,yes,yes,yes,yes,repository or archive,proposed

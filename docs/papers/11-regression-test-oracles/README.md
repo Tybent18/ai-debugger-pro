@@ -12,4 +12,4 @@
 
 > These datasets specify the proposed verification architecture; they are not measured model-performance results.
 
-[← Paper 10](../10-context-selection/context-selection-and-diagnostic-relevance.md) · [All papers](../README.md)
+[← Paper 10](../10-context-selection/context-selection-and-diagnostic-relevance.md) · [All papers](../README.md) · [Paper 12: Reproducible Engineering →](../12-reproducible-engineering/reproducible-engineering-and-release-evidence.md)

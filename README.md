@@ -241,6 +241,7 @@ GitHub Actions runs the same checks on Python 3.10 and 3.12.
 | [AI Debugger Pro: Failure Taxonomy for AI-Assisted Debugging](docs/papers/09-failure-taxonomy/failure-taxonomy-for-ai-assisted-debugging.pdf) | Complete; measured taxonomy | A failure taxonomy grounded in the benchmark's observed syntax, compile, runtime, timeout, and evidence-gap data |
 | [AI Debugger Pro: Context Selection and Diagnostic Relevance](docs/papers/10-context-selection/context-selection-and-diagnostic-relevance.pdf) | Complete; design specification | A governed architecture for selecting relevant, bounded, fresh, private, and attributable debugging context |
 | [AI Debugger Pro: Regression-Test Generation and Independent Oracles](docs/papers/11-regression-test-oracles/regression-test-generation-and-independent-oracles.pdf) | Complete; design specification | A provenance-aware admission architecture separating generated tests from independent verification authority |
+| [AI Debugger Pro: Reproducible Engineering and Release Evidence](docs/papers/12-reproducible-engineering/reproducible-engineering-and-release-evidence.pdf) | Complete; series finale | An evidence graph connecting commits, environments, raw results, claims, release artifacts, and independent replication |
 
 See the [publication catalog](docs/papers/README.md) for reading order and scope. The
 [original AI Studio Debugger paper](docs/AI%20Studio%20Debugger.pdf) is retained as a historical

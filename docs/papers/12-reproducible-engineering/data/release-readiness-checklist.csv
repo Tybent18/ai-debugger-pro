@@ -1,0 +1,17 @@
+gate_id,release_requirement,required_evidence,current_state,blocking_for_research_release,owner
+G01,source state identified,commit and tag,implemented,yes,release workflow
+G02,automated tests pass,complete CI result,implemented,yes,CI
+G03,static checks pass,Ruff result,implemented,yes,CI
+G04,build maps to commit,workflow run and artifact metadata,implemented,yes,release workflow
+G05,dependencies locked,lockfile and digest,partial,yes,engineering
+G06,container images pinned,image digests,proposed,yes,security
+G07,benchmark inputs frozen,manifest and hashes,partial,yes,research
+G08,raw observations retained,JSON or CSV and checksum,implemented for Paper 8,yes,research
+G09,derivation code versioned,aggregation and chart scripts,partial,yes,research
+G10,claim-evidence review complete,claim matrix,partial,yes,publication
+G11,papers and links validated,link and consistency report,partial,yes,publication
+G12,binary checksums published,SHA-256 manifest,proposed,yes,release workflow
+G13,SBOM generated,SPDX or CycloneDX file,proposed,no,security
+G14,artifacts signed,signature and verification command,proposed,no,release workflow
+G15,limitations disclosed,release notes and paper section,implemented,yes,publication
+G16,independent replication archived,replication report,proposed,no,external evaluator
