@@ -17,6 +17,9 @@ These papers document the project in recommended reading order.
 5. [AI Debugger Pro: Repair Verification, Evidence, and Trust](05-repair-verification-and-trust/repair-verification-and-trust.pdf)  
    A technical assurance framework defining scoped verification labels, immutable evidence, independent oracles, regression strategy, provenance, and reviewer decision support. The [editable source](05-repair-verification-and-trust/repair-verification-and-trust.md) is included.
 
+6. [AI Debugger Pro: Multi-Language Execution Architecture](06-multi-language-execution/multi-language-execution-architecture.pdf)  
+   A systems paper separating shared lifecycle contracts from language-specific validation, build, runtime, diagnostic, artifact, and verification semantics. The [editable source](06-multi-language-execution/multi-language-execution-architecture.md) is included.
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
