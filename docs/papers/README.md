@@ -20,6 +20,9 @@ These papers document the project in recommended reading order.
 6. [AI Debugger Pro: Multi-Language Execution Architecture](06-multi-language-execution/multi-language-execution-architecture.pdf)  
    A systems paper separating shared lifecycle contracts from language-specific validation, build, runtime, diagnostic, artifact, and verification semantics. The [editable source](06-multi-language-execution/multi-language-execution-architecture.md) is included.
 
+7. [AI Debugger Pro: Human-in-the-Loop UX and Decision-Support Study Protocol](07-human-in-the-loop-ux/human-in-the-loop-ux-study-protocol.pdf)  
+   A preregistration-ready human-factors protocol evaluating decision accuracy, unsafe acceptance, automation bias, evidence labels, risky-change warnings, calibration, workload, and accessibility. The [editable source](07-human-in-the-loop-ux/human-in-the-loop-ux-study-protocol.md) is included.
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
