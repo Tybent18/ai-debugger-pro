@@ -1,0 +1,13 @@
+lang,failure_class,observed_failures,evidence_nonempty,evidence_empty
+c,runtime,1,0,1
+c,syntax/compile,2,2,0
+c,timeout,1,1,0
+cpp,runtime,1,0,1
+cpp,syntax/compile,2,2,0
+cpp,timeout,1,1,0
+java,runtime,1,1,0
+java,syntax/compile,1,1,0
+java,timeout,1,1,0
+python,runtime,3,3,0
+python,syntax/compile,1,1,0
+python,timeout,1,1,0
