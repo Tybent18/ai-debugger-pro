@@ -1,0 +1,362 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R] /Count 10 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 730 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(AI Debugger Pro) Tj
+0 -24 Td
+/F2 14 Tf
+(Reproducible Engineering and Release Evidence) Tj
+0 -24 Td
+/F1 11 Tf
+(T. R. Bentley | Paper 12 of 12 | September 2026) Tj
+0 -24 Td
+/F1 11 Tf
+() Tj
+0 -24 Td
+/F1 11 Tf
+(ABSTRACT) Tj
+0 -24 Td
+/F1 11 Tf
+(Software claims become credible when readers can trace them to source, environment,) Tj
+0 -24 Td
+/F1 11 Tf
+(raw observations, explicit derivations, and archived artifacts. This paper defines a) Tj
+0 -24 Td
+/F1 11 Tf
+(practical evidence graph and release gate for AI Debugger Pro. It distinguishes measured) Tj
+0 -24 Td
+/F1 11 Tf
+(results, implemented controls, and planned validation for independent review.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 1) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 539 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(1. Motivation and Baseline) Tj
+0 -24 Td
+/F1 11 Tf
+(Reproducibility makes a result auditable. The current measured baseline is Paper 8's) Tj
+0 -24 Td
+/F1 11 Tf
+(frozen 24-case benchmark and its recorded 27-test CI baseline. These observations are) Tj
+0 -24 Td
+/F1 11 Tf
+(not universal guarantees. This paper specifies controls for reproducing those measurements) Tj
+0 -24 Td
+/F1 11 Tf
+(and strengthening later releases without inventing additional outcomes.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 2) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 528 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(2. Evidence Graph) Tj
+0 -24 Td
+/F1 11 Tf
+(source commit -> environment -> frozen inputs -> raw observations) Tj
+0 -24 Td
+/F1 11 Tf
+(-> derivation procedure -> published claim -> release artifact -> replication) Tj
+0 -24 Td
+/F1 11 Tf
+() Tj
+0 -24 Td
+/F1 11 Tf
+(Each edge needs a stable identifier, checksum, version, or documented transformation.) Tj
+0 -24 Td
+/F1 11 Tf
+(A broken edge lowers confidence even when the final chart appears plausible.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 3) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 585 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(3. Reproducibility Levels) Tj
+0 -24 Td
+/F1 11 Tf
+(R0 Narrative only; R1 versioned source; R2 captured environment;) Tj
+0 -24 Td
+/F1 11 Tf
+(R3 frozen inputs, commands, logs, and outputs; R4 deterministic publication;) Tj
+0 -24 Td
+/F1 11 Tf
+(R5 independent replication with recorded variance.) Tj
+0 -24 Td
+/F1 11 Tf
+() Tj
+0 -24 Td
+/F1 11 Tf
+(The repository spans multiple levels. Included manifests expose current status without) Tj
+0 -24 Td
+/F1 11 Tf
+(presenting proposed controls as completed evidence.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 4) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 532 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(4. Artifact and Claim Manifests) Tj
+0 -24 Td
+/F1 11 Tf
+(The artifact manifest records IDs, roles, paths, formats, producers, checksum expectations,) Tj
+0 -24 Td
+/F1 11 Tf
+(retention policies, and status. The claim-evidence matrix links statements to supporting) Tj
+0 -24 Td
+/F1 11 Tf
+(artifacts and labels each measured, implemented, or hypothesis/planned.) Tj
+0 -24 Td
+/F1 11 Tf
+(Machine-readable CSV files allow automated release and audit checks.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 5) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 569 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(5. Environment and AI Provenance) Tj
+0 -24 Td
+/F1 11 Tf
+(Capture runtime, dependency versions, platform, hardware class, locale, time settings,) Tj
+0 -24 Td
+/F1 11 Tf
+(configuration, and exact commands. AI runs additionally need provider/model identifiers,) Tj
+0 -24 Td
+/F1 11 Tf
+(prompt-template versions, sampling settings, tool permissions, context policy, retries,) Tj
+0 -24 Td
+/F1 11 Tf
+(and redaction rules. Nondeterministic services require distributions, not claims of identity.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 6) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 523 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(6. Reproducing Benchmarks and Figures) Tj
+0 -24 Td
+/F1 11 Tf
+(Freeze case definitions, expected behavior, evaluation rules, seeds, logs, and result tables.) Tj
+0 -24 Td
+/F1 11 Tf
+(Generate figures and manuscript tables from recorded data with deterministic procedures.) Tj
+0 -24 Td
+/F1 11 Tf
+(The gate verifies that claims resolve to data, figures resolve to derivations, and artifacts) Tj
+0 -24 Td
+/F1 11 Tf
+(belong to the declared commit.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 7) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 540 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(7. Release Evidence Gate) Tj
+0 -24 Td
+/F1 11 Tf
+(A release identifies source, dependencies, tests, inputs, raw outputs, derivations, documents,) Tj
+0 -24 Td
+/F1 11 Tf
+(checksums, licensing, and limitations. Failures block release or become explicit exceptions.) Tj
+0 -24 Td
+/F1 11 Tf
+(Platform-specific claims need platform-specific evidence. Signed tags, immutable archives,) Tj
+0 -24 Td
+/F1 11 Tf
+(and retention rules preserve the chain after publication.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 8) Tj
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 20 0 R >>
+endobj
+20 0 obj
+<< /Length 508 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(8. Replication and Series Integration) Tj
+0 -24 Td
+/F1 11 Tf
+(Replication records operator, platform, commit, procedure, deviations, outputs, and comparison.) Tj
+0 -24 Td
+/F1 11 Tf
+(Papers 1-7 cover system and methods; 8-9 add evaluation and failure taxonomy; 10-11 add) Tj
+0 -24 Td
+/F1 11 Tf
+(context relevance and independent test oracles; Paper 12 binds the series to reproducible) Tj
+0 -24 Td
+/F1 11 Tf
+(release evidence.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 9) Tj
+ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 23 0 R /F2 24 0 R >> >> /Contents 22 0 R >>
+endobj
+22 0 obj
+<< /Length 666 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+/F2 18 Tf
+(9. Roadmap and Conclusion) Tj
+0 -24 Td
+/F1 11 Tf
+(Near term: CI manifest validation, checksums, and data-driven publication.) Tj
+0 -24 Td
+/F1 11 Tf
+(Next: hermetic environments, multi-platform execution, and immutable release archives.) Tj
+0 -24 Td
+/F1 11 Tf
+(Later: blinded independent replication and longitudinal drift reporting.) Tj
+0 -24 Td
+/F1 11 Tf
+() Tj
+0 -24 Td
+/F1 11 Tf
+(The twelve-paper architecture is complete. Its claims remain bounded by recorded evidence,) Tj
+0 -24 Td
+/F1 11 Tf
+(and this finale supplies the contract for durable, inspectable engineering knowledge.) Tj
+0 -24 Td
+/F1 9 Tf
+(Paper 12 of 12 | 10) Tj
+ET
+endstream
+endobj
+23 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+24 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 25
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000176 00000 n 
+0000000314 00000 n 
+0000001095 00000 n 
+0000001233 00000 n 
+0000001823 00000 n 
+0000001961 00000 n 
+0000002540 00000 n 
+0000002679 00000 n 
+0000003316 00000 n 
+0000003456 00000 n 
+0000004040 00000 n 
+0000004180 00000 n 
+0000004801 00000 n 
+0000004941 00000 n 
+0000005516 00000 n 
+0000005656 00000 n 
+0000006248 00000 n 
+0000006388 00000 n 
+0000006948 00000 n 
+0000007088 00000 n 
+0000007806 00000 n 
+0000007877 00000 n 
+trailer
+<< /Size 25 /Root 1 0 R >>
+startxref
+7953
+%%EOF

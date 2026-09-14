@@ -1,0 +1,11 @@
+claim_id,claim,operational_metric,evidence_artifact,scope,status,limitation
+C01,existing automated suite passed,tests passed,CI and local pytest result,repository baseline,measured,does not prove repair effectiveness
+C02,frozen executions classified as expected,classification agreement,Paper 8 raw CSV,24 fixed cases,measured,small researcher-authored corpus
+C03,failure evidence was nonempty,nonempty failure records,Paper 8 raw CSV,14 of 16 failures,measured,nonempty does not mean actionable
+C04,median execution latency,median milliseconds,Paper 8 summary CSV,single recorded environment,measured,not cross-machine performance
+C05,multi-language execution supported,available language runners,source and architecture evidence,Python C C++ Java,implemented,toolchains remain external
+C06,Docker is default backend,configuration and code path,source and tests,desktop prototype,implemented,no sandbox is absolute
+C07,approval precedes source mutation,interface control path,source and tests,desktop workflow,implemented,human approval may still be wrong
+C08,context selector improves diagnosis,root-cause lift,future ablation results,unmeasured,hypothesis,no current effectiveness evidence
+C09,generated tests improve repair safety,unsafe acceptance reduction,future oracle benchmark,unmeasured,hypothesis,no current effectiveness evidence
+C10,independent replication succeeds,replication agreement,future replication report,unmeasured,planned,no external replication yet

@@ -35,6 +35,9 @@ These papers document the project in recommended reading order.
 11. [AI Debugger Pro: Regression-Test Generation and Independent Oracles](11-regression-test-oracles/regression-test-generation-and-independent-oracles.md)  
     A verification-engineering architecture for oracle provenance, regression-test admission, mutation challenges, independent behavioral evidence, and scoped authority. [PDF](11-regression-test-oracles/regression-test-generation-and-independent-oracles.pdf) · [oracle matrix](11-regression-test-oracles/data/oracle-source-matrix.csv) · [frozen scenarios](11-regression-test-oracles/data/regression-test-scenarios.csv)
 
+12. [AI Debugger Pro: Reproducible Engineering and Release Evidence](12-reproducible-engineering/reproducible-engineering-and-release-evidence.md)  
+    Final series paper defining the evidence graph from source commit through independent replication. [PDF](12-reproducible-engineering/reproducible-engineering-and-release-evidence.pdf) · [artifact manifest](12-reproducible-engineering/data/artifact-manifest.csv) · [claim-evidence matrix](12-reproducible-engineering/data/claim-evidence-matrix.csv) · [release checklist](12-reproducible-engineering/data/release-readiness-checklist.csv)
+
 ## Historical paper
 
 - [AI Studio Debugger](../AI%20Studio%20Debugger.pdf) documents the earlier V0–V4 project state and is preserved for historical comparison.
