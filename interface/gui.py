@@ -67,6 +67,8 @@ class AIDebuggerGUI:
         self.run_button.pack(side=tk.LEFT, padx=(24, 6))
         self.ai_button = ttk.Button(header, text="Diagnose  Ctrl+D", style="Tool.TButton", command=self.request_diagnosis_for_current_code)
         self.ai_button.pack(side=tk.LEFT, padx=3)
+        self.ai_upload_var = tk.BooleanVar(value=os.getenv("AI_DEBUGGER_ALLOW_AI_UPLOAD") == "1")
+        ttk.Checkbutton(header, text="Allow AI code upload", variable=self.ai_upload_var).pack(side=tk.LEFT, padx=5)
         self.apply_button = ttk.Button(header, text="Apply + Verify", style="Tool.TButton", command=self.apply_and_verify, state=tk.DISABLED)
         self.apply_button.pack(side=tk.LEFT, padx=3)
         self.reject_button = ttk.Button(header, text="Reject", style="Tool.TButton", command=self.reject_patch, state=tk.DISABLED)
@@ -208,9 +210,22 @@ class AIDebuggerGUI:
             return
         self._request_diagnosis(code, message, language, entry["id"])
 
+    def clear_history(self):
+        if messagebox.askyesno("Clear history", "Permanently delete all saved execution history?"):
+            self.history_store.clear()
+            self._refresh_history()
+            self._set_state("Execution history cleared", "neutral")
+
     def _request_diagnosis(self, code, message, language, run_id):
         if self._ai_busy:
             return
+        if self.ai_upload_var.get() and os.getenv("AI_DEBUGGER_ALLOW_AI_UPLOAD") != "1":
+            if not messagebox.askyesno("Send code to AI provider", "Source code and error output will be sent to your configured AI provider. Review them for secrets and obtain permission for third-party code. Continue?"):
+                self._set_state("AI upload cancelled", "neutral")
+                return
+            os.environ["AI_DEBUGGER_ALLOW_AI_UPLOAD"] = "1"
+        elif not self.ai_upload_var.get():
+            os.environ.pop("AI_DEBUGGER_ALLOW_AI_UPLOAD", None)
         self._ai_busy = True
         self.ai_button.configure(state=tk.DISABLED)
         self._set_state("Building structured diagnosis...", "busy")
