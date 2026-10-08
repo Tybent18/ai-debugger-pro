@@ -1,4 +1,5 @@
 import json
+import uuid
 import os
 import shutil
 import subprocess
@@ -77,11 +78,11 @@ except BaseException as exc:
 '''
 
 
-def _docker_command(language: str, workspace: Path, trace_python: bool) -> list[str]:
+def _docker_command(language: str, workspace: Path, trace_python: bool, *, container_name: str | None = None) -> list[str]:
     base = [
         "docker", "run", "--rm", "--network", "none", "--memory", "256m",
         "--cpus", "0.5", "--pids-limit", "64", "--read-only", "--cap-drop", "ALL",
-        "--security-opt", "no-new-privileges", "--tmpfs", "/tmp:rw,nosuid,size=64m",
+        "--security-opt", "no-new-privileges", "--tmpfs", "/tmp:rw,nosuid,nodev,size=64m",
         "--mount", f"type=bind,source={workspace.resolve()},target=/workspace,readonly",
         "--workdir", "/workspace", IMAGES[language],
     ]
@@ -91,6 +92,8 @@ def _docker_command(language: str, workspace: Path, trace_python: bool) -> list[
         "C++": ["sh", "-c", "g++ main.cpp -o /tmp/app && /tmp/app"],
         "Java": ["sh", "-c", "javac -d /tmp Main.java && java -cp /tmp Main"],
     }
+    if container_name:
+        base[2:2] = ["--name", container_name]
     return [*base, *commands[language]]
 
 
@@ -138,9 +141,10 @@ def run_sandboxed(
         (workspace / filenames[language]).write_text(code, encoding="utf-8")
         if language == "Python" and trace_python:
             (workspace / "trace_runner.py").write_text(_trace_harness(), encoding="utf-8")
+        container_name = f"ai-debugger-{uuid.uuid4().hex}"
         try:
             completed = subprocess.run(
-                _docker_command(language, workspace, trace_python),
+                _docker_command(language, workspace, trace_python, container_name=container_name),
                 capture_output=True,
                 text=True,
                 timeout=timeout,
@@ -148,7 +152,11 @@ def run_sandboxed(
                 env={"PATH": os.environ.get("PATH", "")},
             )
         except subprocess.TimeoutExpired:
-            return ExecutionResult(False, "Execution timed out; check for orphaned Docker containers.", "docker", timed_out=True)
+            subprocess.run(
+                ["docker", "rm", "-f", container_name],
+                capture_output=True, timeout=5, check=False,
+            )
+            return ExecutionResult(False, "Execution timed out; container cleanup requested.", "docker", timed_out=True)
         except OSError as exc:
             return ExecutionResult(False, f"Docker execution failed: {exc}", "docker")
 
