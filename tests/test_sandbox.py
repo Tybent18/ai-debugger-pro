@@ -59,3 +59,22 @@ def test_explicit_local_backend_without_opt_in_is_blocked(monkeypatch):
 def test_docker_source_mount_is_read_only(tmp_path):
     command = sandbox._docker_command("Python", tmp_path, True)
     assert any("target=/workspace,readonly" in part for part in command)
+
+
+def test_timeout_forces_container_cleanup(monkeypatch):
+    import subprocess
+
+    monkeypatch.setattr(sandbox, "docker_available", lambda: True)
+    commands = []
+
+    def fake_run(command, **kwargs):
+        commands.append(command)
+        if command[1] == "run":
+            raise subprocess.TimeoutExpired(command, 1)
+        return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(sandbox.subprocess, "run", fake_run)
+    result = sandbox.run_sandboxed("Python", "while True: pass", timeout=1)
+    assert result.timed_out
+    assert commands[1][:3] == ["docker", "rm", "-f"]
+    assert commands[0][commands[0].index("--name") + 1] == commands[1][3]
