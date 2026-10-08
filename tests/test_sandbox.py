@@ -18,7 +18,8 @@ def test_local_backend_requires_environment_opt_in(monkeypatch):
     assert result.backend == "blocked"
 
 
-def test_explicit_local_backend_runs_code():
+def test_explicit_local_backend_runs_code(monkeypatch):
+    monkeypatch.setenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION", "1")
     result = sandbox.run_sandboxed("Python", "print(6 * 7)", backend="local")
     assert result.success is True
     assert result.output == "42"
@@ -47,3 +48,14 @@ def test_docker_command_contains_security_controls(tmp_path):
     assert "--cap-drop" in command
     assert "no-new-privileges" in command
 
+
+
+def test_explicit_local_backend_without_opt_in_is_blocked(monkeypatch):
+    monkeypatch.delenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION", raising=False)
+    result = sandbox.run_sandboxed("Python", "print(42)", backend="local")
+    assert result.backend == "blocked"
+
+
+def test_docker_source_mount_is_read_only(tmp_path):
+    command = sandbox._docker_command("Python", tmp_path, True)
+    assert any("target=/workspace,readonly" in part for part in command)
