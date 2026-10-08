@@ -42,7 +42,7 @@ jobs:
           --name ${{ matrix.binary_name }} main.py
       - name: Package macOS application
         if: matrix.platform == 'macOS'
-        run: ditto -c -k --keepParent dist/ai-debugger-pro-macos.app dist/ai-debugger-pro-macos.zip
+        run: ditto -c -k --keepParent dist/ai-debugger-pro-macos dist/ai-debugger-pro-macos.zip
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.binary_name }}

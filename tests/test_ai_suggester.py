@@ -8,7 +8,7 @@ def test_missing_api_key_uses_offline_guidance(monkeypatch):
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     result = ai_suggest_fix("print(missing)", "NameError", "Python")
     assert "OFFLINE MODE" in result
-    assert "OPENAI_API_KEY is not configured" in result
+    assert "AI upload requires explicit opt-in" in result
 
 
 def test_structured_diagnosis_is_parsed():
@@ -50,3 +50,11 @@ def test_malformed_provider_response_degrades_to_offline():
     assert diagnosis.provider == "offline"
     assert diagnosis.has_patch is False
 
+
+
+def test_ai_upload_requires_consent(monkeypatch):
+    monkeypatch.setenv("OPENAI_API_KEY", "test-only")
+    monkeypatch.delenv("AI_DEBUGGER_ALLOW_AI_UPLOAD", raising=False)
+    diagnosis = ai_diagnose("print(secret)", "NameError")
+    assert diagnosis.provider == "offline"
+    assert "explicit opt-in" in diagnosis.explanation

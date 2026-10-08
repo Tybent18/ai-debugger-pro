@@ -138,7 +138,7 @@ python -m pip install -e ".[dev]"
 
 ## Configuration
 
-AI suggestions are optional. Set the API key in your environment rather than placing it in code:
+AI suggestions are optional and transmit source code and error output to the configured model provider. Review code for secrets and obtain authorization before uploading third-party code. Explicitly opt in by setting `AI_DEBUGGER_ALLOW_AI_UPLOAD=1`. Set the API key in your environment rather than placing it in code:
 
 ```bash
 export OPENAI_API_KEY="your-key"

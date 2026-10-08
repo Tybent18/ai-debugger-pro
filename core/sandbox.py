@@ -3,6 +3,7 @@ import os
 import shutil
 import subprocess
 import tempfile
+import uuid
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
@@ -77,13 +78,12 @@ except BaseException as exc:
 '''
 
 
-def _docker_command(language: str, workspace: Path, trace_python: bool) -> list[str]:
-    mount = f"{workspace.resolve()}:/workspace:rw"
+def _docker_command(language: str, workspace: Path, trace_python: bool, *, container_name: str | None = None) -> list[str]:
     base = [
         "docker", "run", "--rm", "--network", "none", "--memory", "256m",
         "--cpus", "0.5", "--pids-limit", "64", "--read-only", "--cap-drop", "ALL",
-        "--security-opt", "no-new-privileges", "--tmpfs", "/tmp:rw,noexec,nosuid,size=64m",
-        "--mount", f"type=bind,source={workspace.resolve()},target=/workspace",
+        "--security-opt", "no-new-privileges", "--tmpfs", "/tmp:rw,nosuid,nodev,size=64m",
+        "--mount", f"type=bind,source={workspace.resolve()},target=/workspace,readonly",
         "--workdir", "/workspace", IMAGES[language],
     ]
     commands = {
@@ -92,7 +92,8 @@ def _docker_command(language: str, workspace: Path, trace_python: bool) -> list[
         "C++": ["sh", "-c", "g++ main.cpp -o /tmp/app && /tmp/app"],
         "Java": ["sh", "-c", "javac -d /tmp Main.java && java -cp /tmp Main"],
     }
-    del mount
+    if container_name:
+        base[2:2] = ["--name", container_name]
     return [*base, *commands[language]]
 
 
@@ -120,7 +121,7 @@ def run_sandboxed(
 
     selected = backend or os.getenv("AI_DEBUGGER_EXECUTION_BACKEND", "docker")
     if selected == "local":
-        if backend != "local" and os.getenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION") != "1":
+        if os.getenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION") != "1":
             return ExecutionResult(False, "Local execution requires explicit opt-in.", "blocked")
         return _local_run(language, code, timeout)
     if selected != "docker":
@@ -140,9 +141,10 @@ def run_sandboxed(
         (workspace / filenames[language]).write_text(code, encoding="utf-8")
         if language == "Python" and trace_python:
             (workspace / "trace_runner.py").write_text(_trace_harness(), encoding="utf-8")
+        container_name = f"ai-debugger-{uuid.uuid4().hex}"
         try:
             completed = subprocess.run(
-                _docker_command(language, workspace, trace_python),
+                _docker_command(language, workspace, trace_python, container_name=container_name),
                 capture_output=True,
                 text=True,
                 timeout=timeout,
@@ -150,7 +152,11 @@ def run_sandboxed(
                 env={"PATH": os.environ.get("PATH", "")},
             )
         except subprocess.TimeoutExpired:
-            return ExecutionResult(False, "Execution timed out.", "docker", timed_out=True)
+            subprocess.run(
+                ["docker", "rm", "-f", container_name],
+                capture_output=True, timeout=5, check=False,
+            )
+            return ExecutionResult(False, "Execution timed out; container cleanup requested.", "docker", timed_out=True)
         except OSError as exc:
             return ExecutionResult(False, f"Docker execution failed: {exc}", "docker")
 

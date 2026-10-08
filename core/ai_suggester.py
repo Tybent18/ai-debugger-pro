@@ -52,6 +52,8 @@ def ai_diagnose(
         return offline_diagnosis(error_msg, language, "No source code was provided")
     if not error_msg or not error_msg.strip():
         return offline_diagnosis(error_msg, language, "No error output was provided")
+    if client_factory is None and os.getenv("AI_DEBUGGER_ALLOW_AI_UPLOAD") != "1":
+        return offline_diagnosis(error_msg, language, "AI upload requires explicit opt-in via AI_DEBUGGER_ALLOW_AI_UPLOAD=1")
     if not os.getenv("OPENAI_API_KEY") and client_factory is None:
         return offline_diagnosis(error_msg, language, "OPENAI_API_KEY is not configured")
 

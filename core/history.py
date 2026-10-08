@@ -1,5 +1,6 @@
 import difflib
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
@@ -39,8 +40,13 @@ class ExecutionHistory:
             "diff_from_last": diff_text,
         }
         self.entries.append(entry)
+        self.entries = self.entries[-max(1, int(os.getenv("AI_DEBUGGER_HISTORY_LIMIT", "100"))):]
         self.save()
         return entry
+
+    def clear(self):
+        self.entries = []
+        self.save()
 
     def last(self):
         return self.entries[-1] if self.entries else None
@@ -61,6 +67,8 @@ class ExecutionHistory:
             temporary_path = self.storage_path.with_suffix(".tmp")
             temporary_path.write_text(json.dumps(self.entries, indent=2), encoding="utf-8")
             temporary_path.replace(self.storage_path)
+            if os.name == "posix":
+                self.storage_path.chmod(0o600)
         except OSError:
             pass
 

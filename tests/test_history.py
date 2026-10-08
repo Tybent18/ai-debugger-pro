@@ -30,3 +30,13 @@ def test_history_records_verified_fix_relationship(tmp_path):
 
     assert verified["parent_id"] == failed["id"]
     assert verified["success"] is True
+
+
+def test_history_limit_and_clear(tmp_path, monkeypatch):
+    monkeypatch.setenv("AI_DEBUGGER_HISTORY_LIMIT", "2")
+    history = ExecutionHistory(tmp_path / "history.json")
+    for i in range(4):
+        history.add("Python", f"print({i})", str(i), True)
+    assert len(history.entries) == 2
+    history.clear()
+    assert ExecutionHistory(tmp_path / "history.json").entries == []

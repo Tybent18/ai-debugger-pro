@@ -18,7 +18,8 @@ def test_local_backend_requires_environment_opt_in(monkeypatch):
     assert result.backend == "blocked"
 
 
-def test_explicit_local_backend_runs_code():
+def test_explicit_local_backend_runs_code(monkeypatch):
+    monkeypatch.setenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION", "1")
     result = sandbox.run_sandboxed("Python", "print(6 * 7)", backend="local")
     assert result.success is True
     assert result.output == "42"
@@ -47,3 +48,33 @@ def test_docker_command_contains_security_controls(tmp_path):
     assert "--cap-drop" in command
     assert "no-new-privileges" in command
 
+
+
+def test_explicit_local_backend_without_opt_in_is_blocked(monkeypatch):
+    monkeypatch.delenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION", raising=False)
+    result = sandbox.run_sandboxed("Python", "print(42)", backend="local")
+    assert result.backend == "blocked"
+
+
+def test_docker_source_mount_is_read_only(tmp_path):
+    command = sandbox._docker_command("Python", tmp_path, True)
+    assert any("target=/workspace,readonly" in part for part in command)
+
+
+def test_timeout_forces_container_cleanup(monkeypatch):
+    import subprocess
+
+    monkeypatch.setattr(sandbox, "docker_available", lambda: True)
+    commands = []
+
+    def fake_run(command, **kwargs):
+        commands.append(command)
+        if command[1] == "run":
+            raise subprocess.TimeoutExpired(command, 1)
+        return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(sandbox.subprocess, "run", fake_run)
+    result = sandbox.run_sandboxed("Python", "while True: pass", timeout=1)
+    assert result.timed_out
+    assert commands[1][:3] == ["docker", "rm", "-f"]
+    assert commands[0][commands[0].index("--name") + 1] == commands[1][3]
