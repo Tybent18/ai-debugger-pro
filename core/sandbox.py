@@ -78,12 +78,11 @@ except BaseException as exc:
 
 
 def _docker_command(language: str, workspace: Path, trace_python: bool) -> list[str]:
-    mount = f"{workspace.resolve()}:/workspace:rw"
     base = [
         "docker", "run", "--rm", "--network", "none", "--memory", "256m",
         "--cpus", "0.5", "--pids-limit", "64", "--read-only", "--cap-drop", "ALL",
-        "--security-opt", "no-new-privileges", "--tmpfs", "/tmp:rw,noexec,nosuid,size=64m",
-        "--mount", f"type=bind,source={workspace.resolve()},target=/workspace",
+        "--security-opt", "no-new-privileges", "--tmpfs", "/tmp:rw,nosuid,size=64m",
+        "--mount", f"type=bind,source={workspace.resolve()},target=/workspace,readonly",
         "--workdir", "/workspace", IMAGES[language],
     ]
     commands = {
@@ -92,7 +91,6 @@ def _docker_command(language: str, workspace: Path, trace_python: bool) -> list[
         "C++": ["sh", "-c", "g++ main.cpp -o /tmp/app && /tmp/app"],
         "Java": ["sh", "-c", "javac -d /tmp Main.java && java -cp /tmp Main"],
     }
-    del mount
     return [*base, *commands[language]]
 
 
@@ -120,7 +118,7 @@ def run_sandboxed(
 
     selected = backend or os.getenv("AI_DEBUGGER_EXECUTION_BACKEND", "docker")
     if selected == "local":
-        if backend != "local" and os.getenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION") != "1":
+        if os.getenv("AI_DEBUGGER_ALLOW_LOCAL_EXECUTION") != "1":
             return ExecutionResult(False, "Local execution requires explicit opt-in.", "blocked")
         return _local_run(language, code, timeout)
     if selected != "docker":
@@ -150,7 +148,7 @@ def run_sandboxed(
                 env={"PATH": os.environ.get("PATH", "")},
             )
         except subprocess.TimeoutExpired:
-            return ExecutionResult(False, "Execution timed out.", "docker", timed_out=True)
+            return ExecutionResult(False, "Execution timed out; check for orphaned Docker containers.", "docker", timed_out=True)
         except OSError as exc:
             return ExecutionResult(False, f"Docker execution failed: {exc}", "docker")
 
